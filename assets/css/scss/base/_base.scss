@@ -1,0 +1,195 @@
+/*――――――――――――――――――――――――――――――――――――――――――――
+/* html,body
+――――――――――――――――――――――――――――――――――――――――――――――*/
+html {
+  scroll-padding-top: 100px;
+  background-color: #039fd9;
+}
+
+body {
+  color: #003046;
+  font-size: 16px;
+  font-family: $font-family;
+  line-height: 1.6;
+  background-color: #fff;
+  font-weight: 300;
+  position: relative;
+  padding-bottom: 6px;
+
+  &.is-active {
+    overflow: hidden;
+  }
+}
+.bodyBorder {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  width: calc(100%);
+  height: calc(100%);
+  border: solid 6px #009ed9;
+  pointer-events: none;
+}
+
+@include sp {
+  body {
+    min-width: inherit;
+    padding-bottom: 4px;
+  }
+  .bodyBorder {
+    border-width: 4px;
+  }
+}
+
+/*――――――――――――――――――――――――――――――――――――――――――――
+/* font
+――――――――――――――――――――――――――――――――――――――――――――――*/
+.font-maven {
+  font-family: $font-maven;
+}
+
+
+/*――――――――――――――――――――――――――――――――――――――――――――
+/* デフォルトの設定
+――――――――――――――――――――――――――――――――――――――――――――――*/
+img {
+  display: block;
+  max-width: 100%;
+}
+svg {
+  display: block;
+}
+a {
+  transition: 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &.c-imgScale {
+    .img {
+      transition: 0.5s;
+    }
+    &:hover {
+      opacity: 1;
+
+      .img {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  circle,
+  path,
+  line,
+  rect {
+    transition: 0.3s;
+  }
+}
+input,
+textarea {
+  font-family: $font-family;
+}
+
+/*――――――――――――――――――――――――――――――――――――――――――――
+/* 共通のレイアウト
+――――――――――――――――――――――――――――――――――――――――――――――*/
+
+/*** コンテナ ***/
+.container {
+  width: 100%;
+  max-width: $container-width;
+  margin: 0 auto;
+}
+.l-container {
+  overflow: hidden;
+}
+
+/*** section ***/
+.sec {
+  padding: 75px 60px 75px;
+}
+.inner {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+@include mid {
+  .sec {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+  .inner {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+}
+
+@include sp {
+  .sec {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .inner {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+}
+
+.topOnly {
+  display: none;
+}
+
+/*――――――――――――――――――――――――――――――――――――――――――――
+/* mixin
+――――――――――――――――――――――――――――――――――――――――――――――*/
+/*** line-height調整 ***/
+@mixin lineHeight($line-height: 1.6) {
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+  }
+
+  &::before {
+    margin-top: calc((1 - #{$line-height}) * 0.5em);
+  }
+
+  &::after {
+    margin-bottom: calc((1 - #{$line-height}) * 0.5em);
+  }
+}
+
+/*** 明度変更 ***/
+@mixin ChangeHoverBgColor($color) {
+  background-color: $color;
+
+  &:hover {
+    background-color: lighten($color, 10%);
+    opacity: 1;
+  }
+}
+
+/*** フォントサイズ、画面幅 ***/
+@mixin vw($font-size, $base-width: 375) {
+  font-size: $font-size / $base-width * 100vw;
+}
+
+.strike {
+  position: relative;
+  &::after {
+    content: "";
+    transform: rotate(7deg);
+    width: 100%;
+    border-top: 2px solid #e53270;
+    position: absolute;
+    top: 50%;
+    left: 0;
+  }
+}

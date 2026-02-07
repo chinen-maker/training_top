@@ -1,0 +1,98 @@
+/**********************************************************
+
+ブレイクポイント
+
+***********************************************************/
+$breakpoint-large: 1280px !default;
+$breakpoint-mid: 1080px !default;
+$breakpoint-pc: 769px !default;
+$breakpoint-sp: 768px !default;
+
+@mixin large {
+  @media screen and (min-width: ($breakpoint-large)) {
+    @content;
+  }
+}
+@mixin mid {
+  @media screen and (max-width: ($breakpoint-mid)) {
+    @content;
+  }
+}
+@mixin pc {
+  @media screen and (min-width: ($breakpoint-pc)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media screen and (max-width: ($breakpoint-sp)) {
+    @content;
+  }
+}
+
+//**********************************************************
+//
+//   color
+//
+//***********************************************************/
+$txt-color: #000624;
+$btn-bgColor: #333;
+$header-bgColor: #ff7a2b;
+$box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+$bg-main-color: #ff7a2b;
+
+$color-btn-main: #f44336;
+
+//**********************************************************
+//
+//   size
+//
+//***********************************************************/
+$container-width: 1000px;
+$header-height-pc: 60px;
+$header-height-sp: 50px;
+$font-size: 16px;
+$sec-h-size: 30px;
+
+//**********************************************************
+//
+//   font-family
+//
+//***********************************************************/
+@font-face {
+  font-family: 'Maven Pro Medium';
+  src: url('../font/MavenPro-Medium.ttf') format('truetype');
+}
+
+
+$font-family: "ヒラギノ角ゴシック", -apple-system, BlinkMacSystemFont, Roboto,
+  "Segoe UI", "Helvetica Neue", HelveticaNeue, "游ゴシック体", YuGothic,
+  "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ",
+  sans-serif;
+
+$font-maven: 'Maven Pro Medium', "ヒラギノ角ゴシック", -apple-system, BlinkMacSystemFont, Roboto,
+"Segoe UI", "Helvetica Neue", HelveticaNeue, "游ゴシック体", YuGothic,
+"游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ",
+sans-serif;
+
+//**********************************************************
+//
+//   変数
+//
+//***********************************************************/
+/*――――――――――――――――――――――――――――――――――――――――――――
+/* pc sp 出し分けのためのcss
+――――――――――――――――――――――――――――――――――――――――――――――*/
+@include pc {
+  .sp-only {
+    display: none !important;
+  }
+  img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+@include sp {
+  .pc-only {
+    display: none !important;
+  }
+}
