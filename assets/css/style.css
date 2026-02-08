@@ -486,7 +486,8 @@ th {
 ――――――――――――――――――――――――――――――――――――――――――――――*/
 html {
   scroll-padding-top: 100px;
-  background-color: #039fd9;
+  scroll-behavior: smooth;
+  background-color: #CFDFC0;
 }
 
 body {
@@ -494,10 +495,9 @@ body {
   font-size: 16px;
   font-family: "Lexend Zetta", sans-serif;
   line-height: 1.6;
-  background-color: #fff;
+  background-color: #CFDFC0;
   font-weight: 300;
   position: relative;
-  padding-bottom: 6px;
 }
 body.is-active {
   overflow: hidden;
@@ -882,11 +882,128 @@ textarea {
 /*――――――――――――――――――――――――――――――――――――――――――――
 /* レイアウトに関するcss
 ――――――――――――――――――――――――――――――――――――――――――――――*/
+.header {
+  position: relative;
+  z-index: 0;
+  padding: 21px clamp(20px, 4.7vw, 60px) 16px;
+  width: 100%;
+  background-color: #CFDFC0;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 280px;
+  max-width: 1160px;
+}
+
+.header__logo__imgBox {
+  max-width: clamp(75px, 6.3vw, 80px);
+}
+
+.header__logo__img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.header__listBox {
+  margin-top: -14px;
+  transform: translateX(2px);
+}
+
+.header__list {
+  display: flex;
+  justify-content: space-between;
+  gap: clamp(30px, 4.7vw, 60px);
+}
+
+.header__list__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.header__list__imgBox {
+  max-width: clamp(68px, 5.72vw, 73px);
+  height: clamp(48px, 4.2vw, 53px);
+}
+
+.header__list__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.header__list__title {
+  font-size: clamp(12px, 1.1vw, 14px);
+  font-family: "Zen Maru Gothic";
+  text-align: center;
+  letter-spacing: 0;
+}
+
 /*――――――――――――――――――――――――――――――――――――――――――――
 /* 個別ページの読み込み
 ――――――――――――――――――――――――――――――――――――――――――――――*/
-.test {
-  font-size: 90px;
+.kvBox {
+  position: relative;
+  z-index: 1;
+  padding-inline: clamp(60px, 7.27vw, 93px);
+  width: 100%;
+}
+
+.kvBox::before {
+  position: absolute;
+  top: -3vw;
+  transform: translateX(-6px);
+  z-index: 1;
+  width: 243px;
+  height: 220px;
+  background: url(../img/img_kv-deco.png) no-repeat center/contain;
+  content: "";
+}
+
+.kvBox__img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.kvBox__text {
+  position: absolute;
+  top: -1.1vw;
+  right: 7.5vw;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 320px;
+  font-size: 40px;
+  color: #fff;
+}
+
+.kvBox__text__word {
+  display: inline-block;
+  padding: 2px 0px 2px 3px;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 10px;
+  background-color: #499D6E;
+}
+
+.kvBox__text__word.word2 {
+  margin-left: 75px;
+}
+
+.kvBox__text__word.word3 {
+  margin-left: 115px;
 }
 
 /*――――――――――――――――――――――――――――――――――――――――――――

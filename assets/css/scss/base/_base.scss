@@ -3,7 +3,8 @@
 ――――――――――――――――――――――――――――――――――――――――――――――*/
 html {
   scroll-padding-top: 100px;
-  background-color: #039fd9;
+  scroll-behavior: smooth;
+  background-color: #CFDFC0;
 }
 
 body {
@@ -11,10 +12,9 @@ body {
   font-size: 16px;
   font-family: $font-family;
   line-height: 1.6;
-  background-color: #fff;
+  background-color: #CFDFC0;
   font-weight: 300;
   position: relative;
-  padding-bottom: 6px;
 
   &.is-active {
     overflow: hidden;

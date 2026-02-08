@@ -1,0 +1,61 @@
+.header {
+  position: relative;
+  z-index: 0;
+  padding: 21px clamp(20px, 4.7vw, 60px) 16px;
+  width: 100%;
+  background-color: #CFDFC0;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 280px;
+  max-width: 1160px;
+}
+
+.header__logo__imgBox {
+  max-width: clamp(75px, 6.3vw, 80px);
+}
+
+.header__logo__img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.header__listBox {
+  margin-top: -14px;
+  transform: translateX(2px);
+}
+
+.header__list {
+  display: flex;
+  justify-content: space-between;
+  gap: clamp(30px, 4.7vw, 60px);
+}
+
+.header__list__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.header__list__imgBox {
+  max-width: clamp(68px, 5.72vw, 73px);
+  height: clamp(48px, 4.2vw, 53px);
+}
+
+.header__list__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.header__list__title {
+  font-size: clamp(12px, 1.1vw, 14px);
+  font-family: 'Zen Maru Gothic';
+  text-align: center;
+  letter-spacing: 0;
+}
