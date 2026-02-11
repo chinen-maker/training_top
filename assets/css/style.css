@@ -488,6 +488,7 @@ html {
   scroll-padding-top: 100px;
   scroll-behavior: smooth;
   background-color: #CFDFC0;
+  overflow-x: hidden;
 }
 
 body {
@@ -498,6 +499,7 @@ body {
   background-color: #CFDFC0;
   font-weight: 300;
   position: relative;
+  overflow-x: hidden;
 }
 body.is-active {
   overflow: hidden;
@@ -645,9 +647,42 @@ textarea {
   margin: 0 auto;
 }
 
+.c-mainTitle {
+  font-size: 75px;
+  font-family: "めもわーる";
+  color: #fff;
+}
+
+.c-subTitle {
+  font-size: 45px;
+  font-weight: bold;
+  font-family: "Zen Maru Gothic";
+}
+
 /*――――――――――――――――――――――――――――――――――――――――――――
 /* component
 ――――――――――――――――――――――――――――――――――――――――――――――*/
+.c-btnBox {
+  padding: 8px;
+  border: 1px solid #fff;
+  border-radius: 40px;
+  background-color: #fff;
+  margin: 55px auto 0;
+  min-width: 336px;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.c-btn {
+  display: block;
+  font-size: 14.5px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding-block: 19.5px 18.5px;
+  border: 1px dashed #F1D1C7;
+  border-radius: 40px;
+}
+
 /*――――――――――――――――――――――――――――――――――――――――――――
 /* プラグインに関するcss
 ――――――――――――――――――――――――――――――――――――――――――――――*/
@@ -967,6 +1002,7 @@ textarea {
 ――――――――――――――――――――――――――――――――――――――――――――――*/
 .kvArea {
   position: relative;
+  padding-bottom: 40px;
 }
 
 .kvArea::after {
@@ -975,8 +1011,8 @@ textarea {
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
-  width: 105%;
-  height: 443px;
+  width: 100%;
+  height: 521px;
   background: url(../img/img_kv-bottom.png) no-repeat center/cover;
   content: "";
 }
@@ -1049,6 +1085,116 @@ textarea {
 
 .kvBox__text__word.word3 {
   margin-left: 115px;
+}
+
+.conceptArea {
+  position: relative;
+  z-index: 2;
+  margin-top: -22px;
+  padding-bottom: 154px;
+  background-color: #3DB164;
+}
+
+.conceptArea::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: 1088px;
+  background: url(../img/bg.png) no-repeat center/cover;
+  content: "";
+}
+
+.conceptBox {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1040px;
+}
+
+.conceptArea .c-mainTitle {
+  margin-top: -53px;
+}
+
+.conceptBox__textBox {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: -5px;
+}
+
+.conceptBox__textBox::before {
+  position: absolute;
+  top: clamp(40px, 5vw, 66px);
+  left: clamp(-177px, -14vw, -140px);
+  height: clamp(600px, 56vw, 717px);
+  aspect-ratio: 418/717;
+  background: url(../img/img_concept-left.png) no-repeat center/contain;
+  content: "";
+}
+
+.conceptBox__textBox::after {
+  position: absolute;
+  top: clamp(45px, 5.4vw, 70px);
+  right: clamp(-246px, -19.2vw, -210px);
+  height: clamp(700px, 64vw, 827px);
+  aspect-ratio: 545/827;
+  background: url(../img/img_concept-right.png) no-repeat center/contain;
+  content: "";
+}
+
+.conceptArea .c-subTitle {
+  color: #fff;
+}
+
+.conceptBox__textBox__text {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Zen Maru Gothic";
+  letter-spacing: 0.38px;
+  line-height: 2.6;
+  color: #fff;
+}
+
+.conceptBox__textBox__text:first-of-type {
+  margin-top: 47px;
+}
+
+.conceptBox__textBox__text + .conceptBox__textBox__text {
+  margin-top: 53px;
+}
+
+.movieArea {
+  position: relative;
+  background-color: #407F87;
+}
+
+.movieArea::before {
+  position: absolute;
+  top: -121px;
+  left: 50%;
+  z-index: 2;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 121px;
+  background: url(../img/img_movie-top.png) no-repeat center/cover;
+  content: "";
+}
+
+.movieArea::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 721px;
+  background: url(../img/bg.png) no-repeat center/cover;
+  content: "";
 }
 
 /*――――――――――――――――――――――――――――――――――――――――――――
