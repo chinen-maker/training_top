@@ -87,7 +87,7 @@
   position: relative;
   z-index: 2;
   margin-top: -22px;
-  padding-bottom: 154px;
+  padding-bottom: 163px;
   background-color: #3DB164;
 }
 
@@ -191,4 +191,12 @@
   height: 721px;
   background: url(../img/bg.png) no-repeat center / cover;
   content: "";
+}
+
+.movieBox {
+  padding-top: 90px;
+}
+
+.movieBox .c-mainTitle {
+  padding-left: 62px;
 }
