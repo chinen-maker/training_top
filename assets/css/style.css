@@ -311,10 +311,8 @@ button,
 input,
 optgroup,
 select,
-textarea {
-  -webkit-appearance: none; /* 1 */
-  -moz-appearance: none;
-       appearance: none;
+textarea { /* 1 */
+  appearance: none;
   vertical-align: middle;
   color: inherit;
   font: inherit;
@@ -649,7 +647,7 @@ textarea {
 
 .c-mainTitle {
   font-size: 75px;
-  font-family: "めもわーる";
+  font-family: "Memoir";
   color: #fff;
 }
 
@@ -669,7 +667,6 @@ textarea {
   background-color: #fff;
   margin: 55px auto 0;
   min-width: 336px;
-  width: -moz-fit-content;
   width: fit-content;
 }
 
@@ -692,7 +689,6 @@ textarea {
   display: block;
   box-sizing: border-box;
   -webkit-user-select: none;
-  -moz-user-select: none;
   user-select: none;
   -webkit-touch-callout: none;
   -khtml-user-select: none;
@@ -956,8 +952,7 @@ textarea {
 .header__logo__img {
   width: 100%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .header__listBox {
@@ -986,8 +981,7 @@ textarea {
 .header__list__img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .header__list__title {
@@ -1040,8 +1034,7 @@ textarea {
   z-index: 1;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .kvBox__text {
@@ -1062,7 +1055,6 @@ textarea {
   display: inline-block;
   padding-top: 2px;
   padding-left: 5px;
-  width: -moz-fit-content;
   width: fit-content;
   line-height: 1.5;
 }
@@ -1199,6 +1191,8 @@ textarea {
 }
 
 .movieBox {
+  position: relative;
+  z-index: 2;
   padding-top: 90px;
 }
 
