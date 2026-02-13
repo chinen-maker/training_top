@@ -197,9 +197,23 @@
 .movieBox {
   position: relative;
   z-index: 2;
-  padding-top: 90px;
+  padding-top: 79px;
 }
 
-.movieBox .c-mainTitle {
+.movieTitleBox {
+  position: relative;
   padding-left: 62px;
+}
+
+.titleIconBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.movieTitleBox .c-mainTitle {
+  position: relative;
 }
