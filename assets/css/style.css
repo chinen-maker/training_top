@@ -311,8 +311,10 @@ button,
 input,
 optgroup,
 select,
-textarea { /* 1 */
-  appearance: none;
+textarea {
+  -webkit-appearance: none; /* 1 */
+  -moz-appearance: none;
+       appearance: none;
   vertical-align: middle;
   color: inherit;
   font: inherit;
@@ -667,6 +669,7 @@ textarea {
   background-color: #fff;
   margin: 55px auto 0;
   min-width: 336px;
+  width: -moz-fit-content;
   width: fit-content;
 }
 
@@ -675,6 +678,7 @@ textarea {
   font-size: 14.5px;
   font-weight: bold;
   letter-spacing: 2px;
+  text-align: center;
   padding-block: 19.5px 18.5px;
   border: 1px dashed #F1D1C7;
   border-radius: 40px;
@@ -689,6 +693,7 @@ textarea {
   display: block;
   box-sizing: border-box;
   -webkit-user-select: none;
+  -moz-user-select: none;
   user-select: none;
   -webkit-touch-callout: none;
   -khtml-user-select: none;
@@ -952,7 +957,8 @@ textarea {
 .header__logo__img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .header__listBox {
@@ -981,7 +987,8 @@ textarea {
 .header__list__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .header__list__title {
@@ -1034,7 +1041,8 @@ textarea {
   z-index: 1;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .kvBox__text {
@@ -1055,6 +1063,7 @@ textarea {
   display: inline-block;
   padding-top: 2px;
   padding-left: 5px;
+  width: -moz-fit-content;
   width: fit-content;
   line-height: 1.5;
 }
@@ -1163,6 +1172,7 @@ textarea {
 
 .movieArea {
   position: relative;
+  padding-bottom: 205px;
   background-color: #407F87;
 }
 
@@ -1196,6 +1206,27 @@ textarea {
   padding-top: 79px;
 }
 
+.movieBox::before {
+  position: absolute;
+  bottom: -24vw;
+  left: -7vw;
+  width: 527px;
+  height: 100%;
+  aspect-ratio: 527/541;
+  background: url(../img/img_movie-left.png) no-repeat center/cover;
+  content: "";
+}
+
+.movieBox::after {
+  position: absolute;
+  bottom: -14vw;
+  right: 0;
+  width: 258px;
+  aspect-ratio: 258/251;
+  background: url(../img/img_movie-right.png) no-repeat center/cover;
+  content: "";
+}
+
 .movieTitleBox {
   position: relative;
   padding-left: 62px;
@@ -1203,7 +1234,7 @@ textarea {
 
 .titleIconBox {
   position: absolute;
-  top: 0;
+  top: -3vw;
   left: 0;
   display: flex;
   justify-content: center;
@@ -1212,6 +1243,393 @@ textarea {
 
 .movieTitleBox .c-mainTitle {
   position: relative;
+}
+
+.titleIconBoxWrapper {
+  position: relative;
+  padding: 23px 29px;
+}
+
+.titleIconBoxWrapper::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  aspect-ratio: 100/100;
+  background: url(../img/ico_movie-circle.png) no-repeat center/cover;
+  content: "";
+}
+
+.titleIconBox__img {
+  width: 40px;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.movieContents {
+  padding: 16px;
+  margin-top: 52px;
+  width: 100%;
+  border-radius: 28px;
+  background-color: #fff;
+}
+
+.movieContents__inner {
+  position: relative;
+  display: flex;
+  gap: 130px;
+  padding: 73px 60px 60px;
+  border: 1px dashed #F1D1C7;
+  border-radius: 20px;
+}
+
+.movieContents__inner {
+  --inner-padding-x: 56px;
+  --inner-padding-bottom: 75px;
+  padding: 71px var(--inner-padding-x) var(--inner-padding-bottom);
+  position: relative;
+}
+
+.movieContents__imgBoxWrapper {
+  position: absolute;
+  bottom: var(--inner-padding-bottom);
+  right: var(--inner-padding-x);
+}
+
+.movieContents__textBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.movieContents__textBox__text {
+  font-size: 18px;
+}
+
+.movieContents .c-subTitle {
+  padding-bottom: 4px;
+  font-weight: 400;
+  line-height: 1;
+  color: #219866;
+  border-bottom: 2px solid #219866;
+}
+
+.movieContents__imgBoxWrapper {
+  position: absolute;
+  bottom: 44px;
+  right: 29px;
+  width: 610px;
+  height: 419px;
+}
+
+.movieContents__imgBox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.movieContents__imgInner {
+  padding: 8px;
+  background-color: #fff;
+  border-radius: 25px;
+}
+
+.movieContents__imgInner.pic1 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.movieContents__imgInner.pic2 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-61%);
+  padding: 5px;
+  border-radius: 15px 15px 0 15px;
+}
+
+.movieContents__imgInner.pic3 {
+  position: absolute;
+  top: 69px;
+  right: 13px;
+  padding: 5px;
+  border-radius: 15px 15px 15px 0;
+}
+
+.movieContents__imgInner__imgBox {
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.pic1 .movieContents__imgInner__imgBox {
+  max-width: 369px;
+  height: auto;
+  aspect-ratio: 369/280;
+}
+
+.pic2 .movieContents__imgInner__imgBox {
+  max-width: 194px;
+  height: auto;
+  aspect-ratio: 194/124;
+  border-radius: 15px;
+}
+
+.pic3 .movieContents__imgInner__imgBox {
+  max-width: 208px;
+  height: auto;
+  aspect-ratio: 208/133;
+  border-radius: 15px;
+}
+
+.movieContents__imgInner__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.scheduleArea {
+  position: relative;
+  padding-top: 112px;
+  background-color: #CDDDBD;
+}
+
+.scheduleArea::before {
+  position: absolute;
+  top: -89px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 112px;
+  background: url(../img/img_schedule-top.png) no-repeat center/cover;
+  content: "";
+}
+
+.scheduleBox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  padding: 0 60px;
+}
+
+.scheduleBox::before {
+  position: absolute;
+  top: -3.5vw;
+  left: 2.5vw;
+  width: 90px;
+  aspect-ratio: 90/164;
+  background: url(../img/img_schedule-Titledeco01.png) no-repeat center/cover;
+  content: "";
+}
+
+.scheduleFlexBox {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.scheduleFlexBox.--reverse {
+  flex-direction: row-reverse;
+}
+
+.scheduleFlexBox.--normal::after {
+  position: absolute;
+  bottom: -2.9vw;
+  right: -9vw;
+  z-index: 1;
+  width: 312px;
+  aspect-ratio: 312/97;
+  background: url(../img/img_schedule-deco01.png) no-repeat center/cover;
+  content: "";
+}
+
+.scheduleFlexBox.--reverse::before {
+  position: absolute;
+  bottom: -3.1vw;
+  left: -9.5vw;
+  z-index: 1;
+  width: 356px;
+  aspect-ratio: 356/71;
+  background: url(../img/img_schedule-deco02.png) no-repeat center/cover;
+  content: "";
+}
+
+.scheduleFlexBox.--reverse::after {
+  position: absolute;
+  top: 4.2vw;
+  right: -4.7vw;
+  width: 86px;
+  aspect-ratio: 86/93;
+  background: url(../img/img_schedule-Titledeco02.png) no-repeat center/cover;
+  content: "";
+}
+
+.scheduleFlexBox__textBox {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+
+.scheduleFlexBox__textBox .c-mainTitle {
+  line-height: 1;
+}
+
+.scheduleFlexBox__textBox__actionsBox {
+  align-self: flex-end;
+}
+
+.scheduleFlexBox__textBox__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 60px;
+  font-family: "Zen Maru Gothic";
+}
+
+.--reverse .scheduleFlexBox__textBox__actions {
+  padding-left: 0;
+  padding-right: 60px;
+}
+
+.scheduleFlexBox__textBox__actions .c-subTitle {
+  letter-spacing: -1px;
+}
+
+.scheduleFlexBox__textBox__actions-text {
+  letter-spacing: 2.1px;
+  margin-top: 16px;
+}
+
+.scheduleFlexBox .c-btnBox {
+  margin: 46px 0 0;
+  min-width: 306px;
+}
+
+.scheduleFlexBox__imgBox {
+  position: absolute;
+  top: 0;
+  right: 3px;
+  z-index: 0;
+  width: 498px;
+  aspect-ratio: 498/359;
+}
+
+.--reverse .scheduleFlexBox__imgBox {
+  position: absolute;
+  left: 0;
+  right: auto;
+}
+
+.scheduleFlexBox__imgBox__img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.scheduleList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 36px;
+  margin-top: 98px;
+  width: 100%;
+}
+
+.scheduleList__item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+}
+
+.scheduleList__item:nth-child(even) {
+  margin-top: 70px;
+}
+
+.scheduleList__imgBox {
+  position: relative;
+  width: 100%;
+}
+
+.scheduleList__imgBox::before {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  width: 39px;
+  aspect-ratio: 39/60;
+  background: url(../img/img_scheduleList-deco01.png) no-repeat center/cover;
+  content: "";
+}
+
+.--list2 .scheduleList__imgBox::before {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  width: 39px;
+  aspect-ratio: 39/60;
+  background: url(../img/img_scheduleList-deco02.png) no-repeat center/cover;
+  content: "";
+}
+
+.--list2 .scheduleList__imgBox::before {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  width: 39px;
+  aspect-ratio: 39/60;
+  background: url(../img/img_scheduleList-deco03.png) no-repeat center/cover;
+  content: "";
+}
+
+.scheduleList__imgBox__img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.scheduleList__textBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+  font-family: "Zen Maru Gothic";
+}
+
+.scheduleList__textBox__title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #20486E;
+}
+
+.scheduleList__textBox__text {
+  text-align: left;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.scheduleList .c-btnBox {
+  margin: 51px auto 0;
+  padding: 4px;
+  min-width: 263px;
+}
+
+.scheduleList .--list3 .c-btnBox,
+.scheduleList .--list4 .c-btnBox {
+  margin: 19px auto 0;
+}
+
+.scheduleList .c-btn {
+  padding-block: 9px 6.5px;
+  font-size: 12px;
 }
 
 /*――――――――――――――――――――――――――――――――――――――――――――
