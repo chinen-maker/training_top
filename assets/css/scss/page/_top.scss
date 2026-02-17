@@ -389,6 +389,7 @@
 .scheduleArea {
   position: relative;
   padding-top: 112px;
+  padding-bottom: 105px;
   background-color: #CDDDBD;
 }
 
@@ -624,4 +625,28 @@
 .scheduleList .c-btn {
   padding-block: 9px 6.5px;
   font-size: 12px;
+}
+
+.recruitArea {
+  position: relative;
+}
+
+.recruitContents {
+  position: relative;
+}
+
+.recruitContents::before {
+  position: absolute;
+  top: -61px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 61px;
+  background: url(../img/img_recruit-top-bg.png) no-repeat center / cover;
+  content: "";
+}
+
+.recruitBox .c-subTitle {
+  text-align: center;
+  color: #fff;
 }
