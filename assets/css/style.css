@@ -1645,6 +1645,40 @@ textarea {
   color: #fff;
 }
 
+.recruitBox__flexBox {
+  width: 100%;
+  padding: 20px 0 60px;
+  border-radius: 35px;
+  background-color: #fff;
+}
+
+.recruitBox__flexBox__inner {
+  position: relative;
+  display: flex;
+  gap: 30px;
+  padding: 98px 60px 60px;
+}
+
+.recruitBox__flexBox__textBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.recruitBox__flexBox__text {
+  font-size: 14px;
+  font-family: "Zen Maru Gothic";
+  letter-spacing: 0;
+}
+
+.recruitBox__flexBox__text + .recruitBox__flexBox__text {
+  margin-top: 10px;
+}
+
+.recruitBox__flexBox .c-btnBox {
+  margin: 55px 0 0;
+}
+
 /*――――――――――――――――――――――――――――――――――――――――――――
 /* utility
 ――――――――――――――――――――――――――――――――――――――――――――――*/
