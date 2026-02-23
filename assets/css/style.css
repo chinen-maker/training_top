@@ -311,8 +311,10 @@ button,
 input,
 optgroup,
 select,
-textarea { /* 1 */
-  appearance: none;
+textarea {
+  -webkit-appearance: none; /* 1 */
+  -moz-appearance: none;
+       appearance: none;
   vertical-align: middle;
   color: inherit;
   font: inherit;
@@ -667,6 +669,7 @@ textarea {
   background-color: #fff;
   margin: 55px auto 0;
   min-width: 336px;
+  width: -moz-fit-content;
   width: fit-content;
 }
 
@@ -690,6 +693,7 @@ textarea {
   display: block;
   box-sizing: border-box;
   -webkit-user-select: none;
+  -moz-user-select: none;
   user-select: none;
   -webkit-touch-callout: none;
   -khtml-user-select: none;
@@ -953,7 +957,8 @@ textarea {
 .header__logo__img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .header__listBox {
@@ -982,7 +987,8 @@ textarea {
 .header__list__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .header__list__title {
@@ -1035,7 +1041,8 @@ textarea {
   z-index: 1;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .kvBox__text {
@@ -1056,6 +1063,7 @@ textarea {
   display: inline-block;
   padding-top: 2px;
   padding-left: 5px;
+  width: -moz-fit-content;
   width: fit-content;
   line-height: 1.5;
 }
@@ -1255,7 +1263,8 @@ textarea {
 .titleIconBox__img {
   width: 40px;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .movieContents {
@@ -1379,7 +1388,8 @@ textarea {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .scheduleArea {
@@ -1521,7 +1531,8 @@ textarea {
 .scheduleFlexBox__imgBox__img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .scheduleList {
@@ -1581,7 +1592,8 @@ textarea {
 .scheduleList__imgBox__img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .scheduleList__textBox {
@@ -1627,11 +1639,16 @@ textarea {
 
 .recruitContents {
   position: relative;
+  padding-top: 92px;
+}
+
+.recruitTopImgBox {
+  width: 100%;
 }
 
 .recruitContents::before {
   position: absolute;
-  top: -61px;
+  top: -48px;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -1640,43 +1657,167 @@ textarea {
   content: "";
 }
 
+.recruitBox {
+  position: relative;
+}
+
+.recruitBox::before {
+  position: absolute;
+  top: 44px;
+  right: 0;
+  width: 125px;
+  height: 129px;
+  background: url(../img/img_recruit-deco01.png) no-repeat center/contain;
+  content: "";
+}
+
+.recruitBox::after {
+  position: absolute;
+  bottom: 6px;
+  right: -46px;
+  width: 240px;
+  height: 170px;
+  background: url(../img/img_recruit-deco02.png) no-repeat center/contain;
+  content: "";
+}
+
 .recruitBox .c-subTitle {
   text-align: center;
   color: #fff;
+  line-height: 1.3;
+}
+
+.recruitBox__flexBoxWrapper {
+  margin-top: 106px;
+  padding: 0 60px;
 }
 
 .recruitBox__flexBox {
+  position: relative;
   width: 100%;
-  padding: 20px 0 60px;
+  padding-top: 20px;
   border-radius: 35px;
   background-color: #fff;
 }
 
-.recruitBox__flexBox__inner {
-  position: relative;
+.recruitBox__flexBox__message {
+  position: absolute;
+  top: -45px;
+  left: 17px;
   display: flex;
   gap: 30px;
-  padding: 98px 60px 60px;
+  align-items: center;
+  color: #6C5B56;
+}
+
+.recruitBox__flexBox__message-vertical {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 15px;
+}
+
+.recruitBox__flexBox__message-vertical__text {
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Zen Maru Gothic";
+  line-height: 1.14;
+  letter-spacing: 2px;
+  writing-mode: vertical-rl;
+}
+
+.recruitBox__flexBox__message-vertical__text:nth-child(2) {
+  margin-top: 14px;
+}
+
+.recruitBox__flexBox__message-vertical__text:nth-child(3) {
+  margin-top: 34px;
+}
+
+.recruitBox__flexBox__message-horizontal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  margin-top: -13px;
+}
+
+.recruitBox__flexBox__message-horizontal__text {
+  padding: 12px 11px 14px 17px;
+  font-size: 25px;
+  line-height: 1.04;
+  letter-spacing: 0;
+  text-align: center;
+  border: 1px solid #F0E6E2;
+  border-radius: 20px;
+  background-color: #F0E6E2;
+  box-shadow: 2px 2px 0 #88746E;
+}
+
+.recruitBox__flexBox__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: stretch;
+  gap: 30px;
+  padding: 95px 60px 60px;
 }
 
 .recruitBox__flexBox__textBox {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  max-width: 413px;
+  line-height: 1.85;
+  letter-spacing: -0.4px;
 }
 
 .recruitBox__flexBox__text {
   font-size: 14px;
   font-family: "Zen Maru Gothic";
-  letter-spacing: 0;
+  letter-spacing: -0.45px;
+  line-height: 1.9;
 }
 
 .recruitBox__flexBox__text + .recruitBox__flexBox__text {
-  margin-top: 10px;
+  margin-top: 6px;
 }
 
 .recruitBox__flexBox .c-btnBox {
-  margin: 55px 0 0;
+  margin: 44px 0 0;
+  padding: 6px;
+  background-color: #F0E6E2;
+}
+
+.recruitBox__flexBox .c-btn {
+  border: 1px dashed #88746E;
+}
+
+.recruitBox__flexBox__imgBox {
+  position: absolute;
+  top: -68px;
+  right: 51px;
+  max-width: 496px;
+}
+
+.recruitBox__flexBox__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.recruitBottomImgBox {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  margin-top: -40px;
+}
+
+.recruitBottomImgBox__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 /*――――――――――――――――――――――――――――――――――――――――――――
