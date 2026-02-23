@@ -1659,6 +1659,7 @@ textarea {
 
 .recruitBox {
   position: relative;
+  z-index: 1;
 }
 
 .recruitBox::before {
