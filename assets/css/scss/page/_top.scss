@@ -408,7 +408,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 70px;
+  gap: 65px;
   padding: 0 60px;
 }
 
@@ -673,6 +673,20 @@
   width: 240px;
   height: 170px;
   background: url(../img/img_recruit-deco02.png) no-repeat center / contain;
+  content: "";
+}
+
+.recruitBox .c-mainTitle {
+  position: relative;
+}
+
+.recruitBox .c-mainTitle::before {
+  position: absolute;
+  top: -35px;
+  left: 0;
+  width: 17px;
+  height: 48px;
+  background: url(../img/img_recruit-Titledeco01.png) no-repeat center / contain;
   content: "";
 }
 
