@@ -404,8 +404,21 @@
   content: "";
 }
 
+.scheduleArea::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1280 / 721;
+  background: url(../img/bg.png) no-repeat center / cover;
+  content: "";
+}
+
 .scheduleBox {
   position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   gap: 68px;
@@ -500,7 +513,7 @@
 
 .scheduleFlexBox__textBox__actions-text{
   letter-spacing: 2.1px;
-  margin-top: 16px;
+  margin-top: 14px;
 
 }
 
@@ -630,6 +643,18 @@
 .recruitArea {
   position: relative;
   padding-bottom: 208px;
+}
+
+.recruitArea::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1280 / 721;
+  background: url(../img/bg.png) no-repeat center / cover;
+  content: "";
 }
 
 .recruitContents {
@@ -831,6 +856,7 @@
 .blogArea {
   position: relative;
   padding-top: 105px;
+  padding-bottom: 140px;
   background-color: #407F86;
 }
 
@@ -845,7 +871,21 @@
   content: "";
 }
 
+.blogArea::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1280 / 721;
+  background: url(../img/bg.png) no-repeat center / cover;
+  content: "";
+}
+
 .blogBox {
+  position: relative;
+  z-index: 2;
   padding: 0 60px;
 }
 
@@ -864,6 +904,10 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 90px;
   margin-top: 33px;
+}
+
+.blogList__item:nth-child(2) {
+  margin-top: 60px;
 }
 
 .blogList__imgBox {
@@ -916,4 +960,9 @@
 .blogList__textBox__title {
   font-size: 19px;
   text-decoration: underline;
+}
+
+.blogBox .c-btnBox {
+  margin: 63px auto 0;
+  max-height: 78px;
 }
