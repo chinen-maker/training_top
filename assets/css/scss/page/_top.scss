@@ -1127,9 +1127,69 @@
 }
 
 .contactBox__text {
-  margin-top: 36px;
+  margin-top: 37px;
   text-align: center;
   font-size: 21px;
   color: #fff;
   letter-spacing: -1px;
+}
+
+.contactInfoBox {
+  max-width: 743px;
+  margin: 27px auto 0;
+  padding: 54px 0 20px;
+  background-color: rgba(255, 255, 255, 0.78);
+  border-radius: 60px;
+}
+
+.contactInfoBox__inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px 0 21px;
+}
+
+.contactInfoBox__tel {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactInfoBox__tel__text {
+  position: relative;
+  margin-left: 52px;
+  padding-left: 43px;
+  width: fit-content;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.9;
+  letter-spacing: -0.048em;
+}
+
+.contactInfoBox__tel__text::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 27px;
+  height: 33px;
+  background: url(../img/ico_phone.svg) no-repeat center / contain;
+  content: "";
+}
+
+.contactInfoBox__tel__number {
+  font-size: 34px;
+  line-height: 1.17;
+  letter-spacing: -0.062em;
+  color: #3DB164;
+}
+
+.contactInfoBox__tel__number-text {
+  font-size: 14px;
+  color: #1D1D1D;
+}
+
+.contactInfoBox__tel__reception {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 16px;
+  color: #1D1D1D;
 }
