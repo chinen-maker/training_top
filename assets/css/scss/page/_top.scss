@@ -1108,3 +1108,28 @@
   width: 13px;
   height: 14px;
 }
+
+.contactArea {
+  position: relative;
+  padding: 57px 0 70px;
+  background: url(../img/img_contact-bg.png) no-repeat center / cover;
+}
+
+.contactBox .c-mainTitle {
+  text-align: center;
+  line-height: 1.3;
+}
+
+.contactBox .c-subTitle {
+  margin-top: 6px;
+  text-align: center;
+  color: #fff;
+}
+
+.contactBox__text {
+  margin-top: 36px;
+  text-align: center;
+  font-size: 21px;
+  color: #fff;
+  letter-spacing: -1px;
+}
