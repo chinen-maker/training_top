@@ -532,6 +532,13 @@ body.is-active {
   font-family: "Maven Pro", sans-serif;
 }
 
+.font-lexend-zetta {
+  font-family: "Lexend Zetta", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
 /*――――――――――――――――――――――――――――――――――――――――――――
 /* デフォルトの設定
 ――――――――――――――――――――――――――――――――――――――――――――――*/
@@ -2161,6 +2168,7 @@ textarea {
 .contactInfoBox__tel {
   display: flex;
   flex-direction: column;
+  gap: 7px;
 }
 
 .contactInfoBox__tel__text {
@@ -2194,14 +2202,20 @@ textarea {
 }
 
 .contactInfoBox__tel__number-text {
+  margin-right: 18px;
   font-size: 14px;
+  letter-spacing: -0.2em;
   color: #1D1D1D;
 }
 
 .contactInfoBox__tel__reception {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  margin-top: 4px;
+  margin-left: 37px;
   font-size: 16px;
+  font-family: "Zen Maru Gothic";
+  letter-spacing: -0.048em;
   color: #1D1D1D;
 }
 
