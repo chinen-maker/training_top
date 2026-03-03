@@ -1151,6 +1151,7 @@
 .contactInfoBox__tel {
   display: flex;
   flex-direction: column;
+  gap: 5px;
 }
 
 .contactInfoBox__tel__text {
@@ -1183,13 +1184,17 @@
 }
 
 .contactInfoBox__tel__number-text {
+  margin-right: 15px;
   font-size: 14px;
   color: #1D1D1D;
 }
 
 .contactInfoBox__tel__reception {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  margin-top: 7px;
+  margin-left: 37px;
   font-size: 16px;
+  font-family: 'Zen Maru Gothic';
   color: #1D1D1D;
 }
