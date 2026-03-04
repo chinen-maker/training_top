@@ -1200,3 +1200,29 @@
   letter-spacing: -0.048em;
   color: #1D1D1D;
 }
+
+.contactInfoBox__mail {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contactInfoBox__mail__text {
+  padding-left: 42px;
+  font-size: 21px;
+  line-height: 1.9;
+  letter-spacing: -0.048em;
+}
+
+.contactInfoBox .c-btnBox {
+  margin: 0 auto;
+  min-width: 310px;
+  color: #fff;
+  border: 1px solid #3DB164;
+  background-color: #3DB164;
+}
+
+.contactInfoBox .c-btn {
+  padding-block: 14.5px 13.5px;
+  border: 2px dotted #fff;
+}
