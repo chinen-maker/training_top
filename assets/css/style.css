@@ -2138,7 +2138,7 @@ textarea {
 .contactInfoBox {
   max-width: 743px;
   margin: 27px auto 0;
-  padding: 54px 0 20px;
+  padding: 54px 0 56px;
   background-color: rgba(255, 255, 255, 0.78);
   border-radius: 60px;
 }
@@ -2205,14 +2205,27 @@ textarea {
 .contactInfoBox__mail {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 8px;
 }
 
 .contactInfoBox__mail__text {
+  position: relative;
+  margin-left: 18px;
   padding-left: 42px;
   font-size: 21px;
   line-height: 1.9;
   letter-spacing: -0.048em;
+}
+
+.contactInfoBox__mail__text::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 29px;
+  height: 18px;
+  background: url(../img/ico_mail.svg) no-repeat center/contain;
+  content: "";
 }
 
 .contactInfoBox .c-btnBox {
