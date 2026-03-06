@@ -1262,6 +1262,8 @@
 }
 
 .footerBox {
+  position: relative;
+  z-index: 2;
   display: flex;
   justify-content: space-between;
 }
@@ -1301,7 +1303,8 @@
   position: relative;
   padding-left: 25px;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
+  font-family: "Zen Maru Gothic";
   line-height: 2.5;
   letter-spacing: -0.05em;
   white-space: nowrap;
@@ -1316,4 +1319,25 @@
   height: 5px;
   background: url(../img/ico_arrow-green.svg) no-repeat center / contain;
   content: "";
+}
+
+.footerBox__blogList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px 50px;
+}
+
+.footerBox__blogList__text {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Zen Maru Gothic";
+  line-height: 2.5;
+  letter-spacing: -0.05em;
+  white-space: nowrap;
+}
+
+.footerBox__snsList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
 }
