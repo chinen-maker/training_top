@@ -311,8 +311,10 @@ button,
 input,
 optgroup,
 select,
-textarea { /* 1 */
-  appearance: none;
+textarea {
+  -webkit-appearance: none; /* 1 */
+  -moz-appearance: none;
+       appearance: none;
   vertical-align: middle;
   color: inherit;
   font: inherit;
@@ -674,6 +676,7 @@ textarea {
   background-color: #fff;
   margin: 55px auto 0;
   min-width: 336px;
+  width: -moz-fit-content;
   width: fit-content;
 }
 
@@ -688,6 +691,10 @@ textarea {
   border-radius: 40px;
 }
 
+.c-btn:hover {
+  opacity: 0.7;
+}
+
 /*――――――――――――――――――――――――――――――――――――――――――――
 /* プラグインに関するcss
 ――――――――――――――――――――――――――――――――――――――――――――――*/
@@ -697,6 +704,7 @@ textarea {
   display: block;
   box-sizing: border-box;
   -webkit-user-select: none;
+  -moz-user-select: none;
   user-select: none;
   -webkit-touch-callout: none;
   -khtml-user-select: none;
@@ -960,7 +968,8 @@ textarea {
 .header__logo__img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .header__listBox {
@@ -989,7 +998,8 @@ textarea {
 .header__list__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .header__list__title {
@@ -1031,8 +1041,8 @@ textarea {
   top: -3vw;
   transform: translateX(-6px);
   z-index: 1;
-  width: 243px;
-  height: 220px;
+  width: clamp(180px, 30vw, 243px);
+  height: clamp(160px, 27vw, 220px);
   background: url(../img/img_kv-deco.png) no-repeat center/contain;
   content: "";
 }
@@ -1042,7 +1052,8 @@ textarea {
   z-index: 1;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .kvBox__text {
@@ -1063,6 +1074,7 @@ textarea {
   display: inline-block;
   padding-top: 2px;
   padding-left: 5px;
+  width: -moz-fit-content;
   width: fit-content;
   line-height: 1.5;
 }
@@ -1209,8 +1221,7 @@ textarea {
   position: absolute;
   bottom: -24vw;
   left: -7vw;
-  width: 527px;
-  height: 100%;
+  width: clamp(360px, 41.171875vw, 527px);
   aspect-ratio: 527/541;
   background: url(../img/img_movie-left.png) no-repeat center/cover;
   content: "";
@@ -1218,9 +1229,9 @@ textarea {
 
 .movieBox::after {
   position: absolute;
-  bottom: -14vw;
+  bottom: clamp(-180px, -14vw, -90px);
   right: 0;
-  width: 258px;
+  width: clamp(180px, 20.15625vw, 258px);
   aspect-ratio: 258/251;
   background: url(../img/img_movie-right.png) no-repeat center/cover;
   content: "";
@@ -1262,7 +1273,8 @@ textarea {
 .titleIconBox__img {
   width: 40px;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .movieContents {
@@ -1289,12 +1301,6 @@ textarea {
   position: relative;
 }
 
-.movieContents__imgBoxWrapper {
-  position: absolute;
-  bottom: var(--inner-padding-bottom);
-  right: var(--inner-padding-x);
-}
-
 .movieContents__textBox {
   display: flex;
   flex-direction: column;
@@ -1308,6 +1314,7 @@ textarea {
 
 .movieContents .c-subTitle {
   padding-bottom: 4px;
+  font-size: clamp(35px, 3.5vw, 45px);
   font-weight: 400;
   line-height: 1;
   color: #219866;
@@ -1317,9 +1324,9 @@ textarea {
 .movieContents__imgBoxWrapper {
   position: absolute;
   bottom: 44px;
-  right: 29px;
-  width: 610px;
-  height: 419px;
+  right: 2.265625vw;
+  width: clamp(420px, 47.66vw, 610px);
+  aspect-ratio: 610/419;
 }
 
 .movieContents__imgBox {
@@ -1329,32 +1336,58 @@ textarea {
 }
 
 .movieContents__imgInner {
+  position: absolute;
   padding: 8px;
   background-color: #fff;
   border-radius: 25px;
 }
 
+/* ---------------- */
+/* 画像1 */
+/* ---------------- */
 .movieContents__imgInner.pic1 {
-  position: absolute;
   bottom: 0;
   left: 0;
+  width: 63.5%;
 }
 
+.pic1 .movieContents__imgInner__imgBox {
+  width: 100%;
+  aspect-ratio: 369/280;
+}
+
+/* ---------------- */
+/* 画像2 */
+/* ---------------- */
 .movieContents__imgInner.pic2 {
-  position: absolute;
   top: 0;
-  left: 50%;
-  transform: translateX(-61%);
+  left: 30%;
+  width: 32.8%;
   padding: 5px;
   border-radius: 15px 15px 0 15px;
 }
 
+.pic2 .movieContents__imgInner__imgBox {
+  width: 100%;
+  aspect-ratio: 194/124;
+  border-radius: 15px;
+}
+
+/* ---------------- */
+/* 画像3 */
+/* ---------------- */
 .movieContents__imgInner.pic3 {
-  position: absolute;
-  top: 69px;
-  right: 13px;
+  top: 16.5%;
+  right: 2.1%;
+  width: 36.1%;
   padding: 5px;
   border-radius: 15px 15px 15px 0;
+}
+
+.pic3 .movieContents__imgInner__imgBox {
+  width: 100%;
+  aspect-ratio: 208/133;
+  border-radius: 15px;
 }
 
 .movieContents__imgInner__imgBox {
@@ -1362,31 +1395,12 @@ textarea {
   overflow: hidden;
 }
 
-.pic1 .movieContents__imgInner__imgBox {
-  max-width: 369px;
-  height: auto;
-  aspect-ratio: 369/280;
-}
-
-.pic2 .movieContents__imgInner__imgBox {
-  max-width: 194px;
-  height: auto;
-  aspect-ratio: 194/124;
-  border-radius: 15px;
-}
-
-.pic3 .movieContents__imgInner__imgBox {
-  max-width: 208px;
-  height: auto;
-  aspect-ratio: 208/133;
-  border-radius: 15px;
-}
-
 .movieContents__imgInner__img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .scheduleArea {
@@ -1419,13 +1433,18 @@ textarea {
   content: "";
 }
 
+.scheduleArea .c-container {
+  position: relative;
+  z-index: 2;
+}
+
 .scheduleBox {
   position: relative;
   z-index: 2;
   display: flex;
   flex-direction: column;
   gap: 68px;
-  padding: 0 60px;
+  padding: 0 clamp(30px, 3.9vw, 60px);
 }
 
 .scheduleBox::before {
@@ -1506,7 +1525,7 @@ textarea {
 
 .--reverse .scheduleFlexBox__textBox__actions {
   padding-left: 0;
-  padding-right: 60px;
+  padding-right: clamp(0px, (100vw - 768px) * 60 / 512, 60px);
 }
 
 .scheduleFlexBox__textBox__actions .c-subTitle {
@@ -1520,7 +1539,7 @@ textarea {
 
 .scheduleFlexBox .c-btnBox {
   margin: 46px 0 0;
-  min-width: 306px;
+  min-width: clamp(280px, 23.91vw, 306px);
 }
 
 .scheduleFlexBox__imgBox {
@@ -1541,13 +1560,18 @@ textarea {
 .scheduleFlexBox__imgBox__img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.scheduleListWrapper {
+  padding: 0 15px;
 }
 
 .scheduleList {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 36px;
+  gap: clamp(8px, 8px + 28 * (100vw - 768px) / 512, 36px);
   margin-top: 98px;
   width: 100%;
 }
@@ -1601,7 +1625,8 @@ textarea {
 .scheduleList__imgBox__img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .scheduleList__textBox {
@@ -1628,7 +1653,7 @@ textarea {
 .scheduleList .c-btnBox {
   margin: 51px auto 0;
   padding: 4px;
-  min-width: 263px;
+  min-width: clamp(180px, 20vw, 263px);
 }
 
 .scheduleList .--list3 .c-btnBox,
@@ -1660,7 +1685,8 @@ textarea {
 
 .recruitContents {
   position: relative;
-  padding-top: 92px;
+  z-index: 2;
+  padding-top: clamp(62px, 62px + 30 * (100vw - 768px) / 512, 92px);
 }
 
 .recruitTopImgBox {
@@ -1802,7 +1828,7 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 413px;
+  max-width: clamp(248px, 248px + 165 * (100vw - 768px) / 512, 413px);
   line-height: 1.85;
   letter-spacing: -0.4px;
 }
@@ -1830,15 +1856,16 @@ textarea {
 
 .recruitBox__flexBox__imgBox {
   position: absolute;
-  top: -68px;
+  top: clamp(-68px, 90px + -158 * (100vw - 768px) / 512, 90px);
   right: 51px;
-  max-width: 496px;
+  max-width: clamp(228px, 228px + 268 * (100vw - 768px) / 512, 496px);
 }
 
 .recruitBox__flexBox__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .recruitBottomImgBox {
@@ -1851,7 +1878,8 @@ textarea {
 .recruitBottomImgBox__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .blogArea {
@@ -1941,7 +1969,8 @@ textarea {
   z-index: 1;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .blogList__textBox {
@@ -1980,7 +2009,7 @@ textarea {
   top: -6.5vw;
   left: 0;
   width: 100%;
-  font-size: 123px;
+  font-size: clamp(75px, 75px + 48 * (100vw - 768px) / 512, 123px);
   line-height: 1.2;
   color: #F4EB5B;
 }
@@ -2016,7 +2045,7 @@ textarea {
 .right .specialContents__topBox__textBox {
   position: relative;
   z-index: 2;
-  margin-left: -21px;
+  margin-left: clamp(-21px, -21px + 21 * (1280px - 100vw) / 512, 0px);
 }
 
 .specialContents__topBox__textBox-text {
@@ -2059,7 +2088,8 @@ textarea {
 .specialContents__topBox__imgBox-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .specialContents__bottomBox {
@@ -2068,7 +2098,7 @@ textarea {
   gap: 49px;
   margin-top: 41px;
   padding-left: 19px;
-  padding-right: 110px;
+  padding-right: clamp(30px, 30px + 80 * (100vw - 768px) / 512, 110px);
 }
 
 .right .specialContents__bottomBox {
@@ -2099,6 +2129,10 @@ textarea {
   aspect-ratio: 71/69;
   border: 2px dotted #000000;
   border-radius: 50%;
+}
+
+.specialContents__bottomBox__btnBox-btn:hover {
+  opacity: 0.5;
 }
 
 .specialContents__bottomBox__btnBox-img {
@@ -2159,6 +2193,7 @@ textarea {
   position: relative;
   margin-left: 52px;
   padding-left: 43px;
+  width: -moz-fit-content;
   width: fit-content;
   font-size: 21px;
   font-weight: 500;
@@ -2243,7 +2278,7 @@ textarea {
 
 .footer {
   position: relative;
-  padding: 60px 0 115px;
+  padding: 60px 0 120px;
   background-color: #CDDDBD;
 }
 
@@ -2262,11 +2297,18 @@ textarea {
   max-width: 1040px;
 }
 
+@media screen and (max-width: 1040px) {
+  .footerInner {
+    padding-inline: 15px;
+  }
+}
 .footerBox {
   position: relative;
   z-index: 2;
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
 }
 
 .footerBox__logo {
@@ -2278,7 +2320,8 @@ textarea {
 .footerBox__logo__img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .footerBox__nav {
@@ -2286,7 +2329,7 @@ textarea {
   flex-direction: column;
   align-items: flex-start;
   gap: 30px;
-  padding-top: 23px;
+  padding-top: 25px;
   max-width: 596px;
 }
 
@@ -2297,17 +2340,18 @@ textarea {
 }
 
 .footerBox__navList__item {
+  width: -moz-fit-content;
   width: fit-content;
 }
 
 .footerBox__navList__text {
   position: relative;
-  padding-left: 25px;
+  padding-left: 21px;
   font-size: 16px;
   font-weight: 400;
   font-family: "Zen Maru Gothic";
-  line-height: 2.5;
-  letter-spacing: -0.05em;
+  line-height: 1.5;
+  letter-spacing: 0px;
   white-space: nowrap;
 }
 
@@ -2322,18 +2366,28 @@ textarea {
   content: "";
 }
 
+.footerBox__blogBox {
+  display: flex;
+  gap: 34px;
+}
+
 .footerBox__blogList {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px 50px;
+  margin-top: 10px;
+}
+
+.footerBox__blogList__link:hover {
+  opacity: 0.7;
 }
 
 .footerBox__blogList__text {
   font-size: 16px;
   font-weight: 400;
   font-family: "Zen Maru Gothic";
-  line-height: 2.5;
-  letter-spacing: -0.05em;
+  line-height: 1.5;
+  letter-spacing: 0px;
   white-space: nowrap;
 }
 
@@ -2341,6 +2395,58 @@ textarea {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
+}
+
+.footerBox__snsList__item {
+  width: 31px;
+  height: 30px;
+}
+
+.footerBox__snsList__link:hover {
+  opacity: 0.7;
+}
+
+.footerBox__textBox {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: -1px;
+  padding-left: 2px;
+}
+
+.footerBox__textBox__text {
+  font-size: 15px;
+  font-weight: 400;
+  font-family: "Zen Maru Gothic";
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.footerBox__textBox__link {
+  text-decoration: underline;
+}
+
+.footerBox__textBox__link:hover {
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+.footerBox__textBox__text.map {
+  position: relative;
+  padding-left: 31px;
+  letter-spacing: -1px;
+  font-family: "Lexend Zetta";
+}
+
+.footerBox__textBox__text.map::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 11px;
+  height: 16px;
+  background: url(../img/ico_map.svg) no-repeat center/contain;
+  content: "";
 }
 
 /*――――――――――――――――――――――――――――――――――――――――――――
