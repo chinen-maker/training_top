@@ -17,7 +17,7 @@
 
 @media screen and (max-width: 1000px)  {
     .header__inner {
-        gap: clamp(165px, 5vw, 280px);
+        gap: clamp(105px, 5vw, 280px);
     }
 }
 
@@ -72,3 +72,16 @@
   text-align: center;
   letter-spacing: 0;
 }
+
+@media screen and (min-width: 769px)  {
+  .header__hamburger {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px)  {
+  .header__hamburger {
+    display: block;
+  }
+}
+
