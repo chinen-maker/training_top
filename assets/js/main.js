@@ -1,17 +1,8 @@
-jQuery(function ($) {
-    // 電話番号をPC無効化
-    (function () {
-        var ua = navigator.userAgent.toLowerCase();
-        var isMobile = /iphone/.test(ua) || /android(.+)?mobile/.test(ua);
+const hamburger = document.querySelector(".header__hamburger");
+const menu = document.querySelector(".header__listBox");
 
-        if (!isMobile) {
-            $('a[href^="tel:"]').on('click', function (e) {
-                e.preventDefault();
-            });
-        }
-    })();
-
-    // svgをインラインで読み込む
-    deSVG('.svg', true);
-
+hamburger.addEventListener("click", function () {
+  hamburger.classList.toggle("is-active");
+  menu.classList.toggle("is-active");
+  document.body.classList.toggle("is-menu-open");
 });

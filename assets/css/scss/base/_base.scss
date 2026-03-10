@@ -18,10 +18,12 @@ body {
   position: relative;
   overflow-x: hidden;
 
-  &.is-active {
+  &.is-menu-open {
     overflow: hidden;
+    height: 100vh;
   }
 }
+
 .bodyBorder {
   position: fixed;
   top: 0;
