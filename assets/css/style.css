@@ -311,8 +311,10 @@ button,
 input,
 optgroup,
 select,
-textarea { /* 1 */
-  appearance: none;
+textarea {
+  -webkit-appearance: none; /* 1 */
+  -moz-appearance: none;
+       appearance: none;
   vertical-align: middle;
   color: inherit;
   font: inherit;
@@ -501,7 +503,7 @@ body {
 }
 body.is-menu-open {
   overflow: hidden;
-  height: 100vh;
+  height: 100%;
 }
 
 .bodyBorder {
@@ -675,6 +677,7 @@ textarea {
   background-color: #fff;
   margin: 55px auto 0;
   min-width: 336px;
+  width: -moz-fit-content;
   width: fit-content;
 }
 
@@ -702,6 +705,7 @@ textarea {
   display: block;
   box-sizing: border-box;
   -webkit-user-select: none;
+  -moz-user-select: none;
   user-select: none;
   -webkit-touch-callout: none;
   -khtml-user-select: none;
@@ -965,7 +969,8 @@ textarea {
 .header__logo__img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .header__listBox {
@@ -994,7 +999,8 @@ textarea {
 .header__list__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .header__list__title {
@@ -1017,9 +1023,16 @@ textarea {
 @media screen and (max-width: 768px) {
   .header__hamburger {
     display: block;
-    position: relative;
+    position: absolute;
+    top: 0;
+    right: 0;
     width: 30px;
     height: 20px;
+  }
+  .is-menu-open .header__hamburger {
+    position: fixed;
+    top: 21px;
+    right: clamp(20px, 4.7vw, 60px);
   }
   .header__hamburger__line {
     position: absolute;
@@ -1048,9 +1061,23 @@ textarea {
     transform: rotate(-45deg);
     bottom: 9px;
   }
+  .is-menu-open .header {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100dvh;
+    background: #CFDFC0;
+    z-index: 50;
+    overflow-y: auto;
+  }
   .header__inner {
+    position: relative;
     justify-content: space-between;
     gap: 0;
+  }
+  .is-menu-open .header__inner {
+    flex-direction: column;
+    align-items: center;
   }
   .header__logo {
     position: relative;
@@ -1063,29 +1090,26 @@ textarea {
     display: none;
   }
   .header__listBox.is-active {
-    position: fixed;
-    inset: 0;
+    position: static;
     z-index: 50;
-    width: 100vw;
-    padding: 0 5vw;
+    width: 100%;
+    margin-top: 0;
+    padding: 8vw 5vw 0;
     background: #CFDFC0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     transform: translateX(0);
-    overflow: hidden;
   }
   .header__list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
-    max-height: 100%;
-    overflow-y: auto;
     border-top: 1px solid #000;
   }
   .header__list__link {
     flex-direction: row;
-    padding: 6.2vw 0 6.2vw 50px;
+    padding: 6.2vw 0 6.2vw 0;
     border-bottom: 1px solid #000;
   }
 }
@@ -1132,7 +1156,8 @@ textarea {
   z-index: 1;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .kvBox__text {
@@ -1153,6 +1178,7 @@ textarea {
   display: inline-block;
   padding-top: 2px;
   padding-left: 5px;
+  width: -moz-fit-content;
   width: fit-content;
   line-height: 1.5;
 }
@@ -1351,7 +1377,8 @@ textarea {
 .titleIconBox__img {
   width: 40px;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .movieContents {
@@ -1476,7 +1503,8 @@ textarea {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .scheduleArea {
@@ -1636,7 +1664,8 @@ textarea {
 .scheduleFlexBox__imgBox__img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .scheduleListWrapper {
@@ -1700,7 +1729,8 @@ textarea {
 .scheduleList__imgBox__img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .scheduleList__textBox {
@@ -1938,7 +1968,8 @@ textarea {
 .recruitBox__flexBox__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .recruitBottomImgBox {
@@ -1951,7 +1982,8 @@ textarea {
 .recruitBottomImgBox__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .blogArea {
@@ -2041,7 +2073,8 @@ textarea {
   z-index: 1;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .blogList__textBox {
@@ -2159,7 +2192,8 @@ textarea {
 .specialContents__topBox__imgBox-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .specialContents__bottomBox {
@@ -2263,6 +2297,7 @@ textarea {
   position: relative;
   margin-left: 52px;
   padding-left: 43px;
+  width: -moz-fit-content;
   width: fit-content;
   font-size: 21px;
   font-weight: 500;
@@ -2389,7 +2424,8 @@ textarea {
 .footerBox__logo__img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .footerBox__nav {
@@ -2408,6 +2444,7 @@ textarea {
 }
 
 .footerBox__navList__item {
+  width: -moz-fit-content;
   width: fit-content;
 }
 

@@ -87,10 +87,18 @@
 @media screen and (max-width: 768px) {
   .header__hamburger {
     display: block;
-    position: relative;
+    position: absolute;
+    top: 0;
+    right: 0;
     width: 30px;
     height: 20px;
   }
+
+  .is-menu-open .header__hamburger {
+    position: fixed;
+    top: 21px;
+    right: clamp(20px, 4.7vw, 60px);
+}
 
   .header__hamburger__line {
     position: absolute;
@@ -126,10 +134,26 @@
     bottom: 9px;
   }
 
+  .is-menu-open .header {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100dvh;
+    background: #CFDFC0;
+    z-index: 50;
+    overflow-y: auto; 
+  }
+
   .header__inner {
+    position: relative;
     justify-content: space-between;
     gap: 0;
   }
+
+  .is-menu-open .header__inner {
+  flex-direction: column;
+  align-items: center;
+}
 
   .header__logo {
     position: relative;
@@ -145,31 +169,28 @@
   }
 
   .header__listBox.is-active {
-    position: fixed;
-    inset: 0;
+    position: static;
     z-index: 50;
-    width: 100vw;
-    padding: 0 5vw;
+    width: 100%;
+    margin-top: 0;
+    padding: 8vw 5vw 0;
     background: #CFDFC0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     transform: translateX(0);
-    overflow: hidden;
   }
 
   .header__list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
-    max-height: 100%;
-    overflow-y: auto;
     border-top: 1px solid #000;
   }
 
   .header__list__link {
     flex-direction: row;
-    padding: 6.2vw 0 6.2vw 50px;
+    padding: 6.2vw 0 6.2vw 0;
     border-bottom: 1px solid #000;
   }
 }
