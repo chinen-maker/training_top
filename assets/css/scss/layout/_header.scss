@@ -87,9 +87,9 @@
 @media screen and (max-width: 768px) {
   .header__hamburger {
     display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
+    position: fixed;
+    top: 21px;
+    right: clamp(20px, 4.7vw, 60px);
     width: 30px;
     height: 20px;
   }
