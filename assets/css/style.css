@@ -311,8 +311,10 @@ button,
 input,
 optgroup,
 select,
-textarea { /* 1 */
-  appearance: none;
+textarea {
+  -webkit-appearance: none; /* 1 */
+  -moz-appearance: none;
+       appearance: none;
   vertical-align: middle;
   color: inherit;
   font: inherit;
@@ -675,6 +677,7 @@ textarea {
   background-color: #fff;
   margin: 55px auto 0;
   min-width: 336px;
+  width: -moz-fit-content;
   width: fit-content;
 }
 
@@ -702,6 +705,7 @@ textarea {
   display: block;
   box-sizing: border-box;
   -webkit-user-select: none;
+  -moz-user-select: none;
   user-select: none;
   -webkit-touch-callout: none;
   -khtml-user-select: none;
@@ -965,7 +969,8 @@ textarea {
 .header__logo__img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .header__listBox {
@@ -994,7 +999,8 @@ textarea {
 .header__list__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .header__list__title {
@@ -1060,7 +1066,7 @@ textarea {
     inset: 0;
     width: 100%;
     height: 100vh;
-    background: #CFDFC0;
+    background: #fff;
     z-index: 50;
     overflow-y: auto;
   }
@@ -1093,7 +1099,7 @@ textarea {
     width: 100%;
     margin-top: 0;
     padding: 8vw 5vw 0;
-    background: #CFDFC0;
+    background: #fff;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -1104,15 +1110,227 @@ textarea {
   .header__list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: clamp(10px, 3vw, 30px);
     width: 100%;
     border-top: 1px solid #000;
   }
   .header__list__link {
     flex-direction: row;
+    gap: clamp(10px, 3vw, 30px);
     padding: 6.2vw 0 6.2vw 0;
+    height: 100%;
     border-bottom: 1px solid #000;
   }
+  .header__list__imgBox {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 26px;
+    height: 27px;
+  }
+  .header__list__imgBox::before {
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: url(../img/img_header-sp01.png) no-repeat center/cover;
+    content: "";
+  }
+  .header__list__imgBox::after {
+    position: absolute;
+    z-index: -2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: url(../img/img_header-sp02.png) no-repeat center/cover;
+    content: "";
+  }
+  .header__list__img {
+    display: block;
+    width: 13px;
+    height: auto;
+  }
 }
+.footer {
+  position: relative;
+  padding: 60px 0 120px;
+  background-color: #CDDDBD;
+}
+
+.footer::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 467px;
+  background: url(../img/img_footer-bottom.png) no-repeat center/cover;
+  content: "";
+}
+
+.footerInner {
+  margin: 0 auto;
+  max-width: 1040px;
+}
+
+@media screen and (max-width: 1040px) {
+  .footerInner {
+    padding-inline: 15px;
+  }
+}
+.footerBox {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.footerBox__logo {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 229px;
+}
+
+.footerBox__logo__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.footerBox__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  padding-top: 25px;
+  max-width: 596px;
+}
+
+.footerBox__navList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px 75px;
+}
+
+.footerBox__navList__item {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.footerBox__navList__text {
+  position: relative;
+  padding-left: 21px;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Zen Maru Gothic";
+  line-height: 1.5;
+  letter-spacing: 0px;
+  white-space: nowrap;
+}
+
+.footerBox__navList__text::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 5px;
+  background: url(../img/ico_arrow-green.svg) no-repeat center/contain;
+  content: "";
+}
+
+.footerBox__blogBox {
+  display: flex;
+  gap: 34px;
+}
+
+.footerBox__blogList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px 50px;
+  margin-top: 10px;
+}
+
+.footerBox__blogList__link:hover {
+  opacity: 0.7;
+}
+
+.footerBox__blogList__text {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Zen Maru Gothic";
+  line-height: 1.5;
+  letter-spacing: 0px;
+  white-space: nowrap;
+}
+
+.footerBox__snsList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.footerBox__snsList__item {
+  width: 31px;
+  height: 30px;
+}
+
+.footerBox__snsList__link:hover {
+  opacity: 0.7;
+}
+
+.footerBox__textBox {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: -1px;
+  padding-left: 2px;
+}
+
+.footerBox__textBox__text {
+  font-size: 15px;
+  font-weight: 400;
+  font-family: "Zen Maru Gothic";
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.footerBox__textBox__link {
+  text-decoration: underline;
+}
+
+.footerBox__textBox__link:hover {
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+.footerBox__textBox__text.map {
+  position: relative;
+  padding-left: 31px;
+  letter-spacing: -1px;
+  font-family: "Lexend Zetta";
+}
+
+.footerBox__textBox__text.map::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 11px;
+  height: 16px;
+  background: url(../img/ico_map.svg) no-repeat center/contain;
+  content: "";
+}
+
 /*――――――――――――――――――――――――――――――――――――――――――――
 /* 個別ページの読み込み
 ――――――――――――――――――――――――――――――――――――――――――――――*/
@@ -1156,7 +1374,8 @@ textarea {
   z-index: 1;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .kvBox__text {
@@ -1177,6 +1396,7 @@ textarea {
   display: inline-block;
   padding-top: 2px;
   padding-left: 5px;
+  width: -moz-fit-content;
   width: fit-content;
   line-height: 1.5;
 }
@@ -1375,7 +1595,8 @@ textarea {
 .titleIconBox__img {
   width: 40px;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .movieContents {
@@ -1500,7 +1721,8 @@ textarea {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .scheduleArea {
@@ -1660,7 +1882,8 @@ textarea {
 .scheduleFlexBox__imgBox__img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .scheduleListWrapper {
@@ -1724,7 +1947,8 @@ textarea {
 .scheduleList__imgBox__img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .scheduleList__textBox {
@@ -1962,7 +2186,8 @@ textarea {
 .recruitBox__flexBox__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .recruitBottomImgBox {
@@ -1975,7 +2200,8 @@ textarea {
 .recruitBottomImgBox__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .blogArea {
@@ -2065,7 +2291,8 @@ textarea {
   z-index: 1;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .blogList__textBox {
@@ -2183,7 +2410,8 @@ textarea {
 .specialContents__topBox__imgBox-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .specialContents__bottomBox {
@@ -2287,6 +2515,7 @@ textarea {
   position: relative;
   margin-left: 52px;
   padding-left: 43px;
+  width: -moz-fit-content;
   width: fit-content;
   font-size: 21px;
   font-weight: 500;
@@ -2369,177 +2598,27 @@ textarea {
   border: 2px dotted #fff;
 }
 
-.footer {
-  position: relative;
-  padding: 60px 0 120px;
-  background-color: #CDDDBD;
-}
-
-.footer::after {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 467px;
-  background: url(../img/img_footer-bottom.png) no-repeat center/cover;
-  content: "";
-}
-
-.footerInner {
-  margin: 0 auto;
-  max-width: 1040px;
-}
-
-@media screen and (max-width: 1040px) {
-  .footerInner {
+@media screen and (max-width: 768px) {
+  .kvArea::after {
+    height: 235px;
+  }
+  .kvBox {
     padding-inline: 15px;
   }
+  .kvBox__text {
+    top: 3.9vw;
+    right: -0.5vw;
+    gap: 15px;
+    min-width: 200px;
+    font-size: 21px;
+  }
+  .kvBox__text__word.word2 {
+    margin-left: 35px;
+  }
+  .kvBox__text__word.word3 {
+    margin-left: 70px;
+  }
 }
-.footerBox {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 15px;
-}
-
-.footerBox__logo {
-  display: flex;
-  justify-content: flex-start;
-  max-width: 229px;
-}
-
-.footerBox__logo__img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.footerBox__nav {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 30px;
-  padding-top: 25px;
-  max-width: 596px;
-}
-
-.footerBox__navList {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px 75px;
-}
-
-.footerBox__navList__item {
-  width: fit-content;
-}
-
-.footerBox__navList__text {
-  position: relative;
-  padding-left: 21px;
-  font-size: 16px;
-  font-weight: 400;
-  font-family: "Zen Maru Gothic";
-  line-height: 1.5;
-  letter-spacing: 0px;
-  white-space: nowrap;
-}
-
-.footerBox__navList__text::before {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  width: 8px;
-  height: 5px;
-  background: url(../img/ico_arrow-green.svg) no-repeat center/contain;
-  content: "";
-}
-
-.footerBox__blogBox {
-  display: flex;
-  gap: 34px;
-}
-
-.footerBox__blogList {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px 50px;
-  margin-top: 10px;
-}
-
-.footerBox__blogList__link:hover {
-  opacity: 0.7;
-}
-
-.footerBox__blogList__text {
-  font-size: 16px;
-  font-weight: 400;
-  font-family: "Zen Maru Gothic";
-  line-height: 1.5;
-  letter-spacing: 0px;
-  white-space: nowrap;
-}
-
-.footerBox__snsList {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-}
-
-.footerBox__snsList__item {
-  width: 31px;
-  height: 30px;
-}
-
-.footerBox__snsList__link:hover {
-  opacity: 0.7;
-}
-
-.footerBox__textBox {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  margin-top: -1px;
-  padding-left: 2px;
-}
-
-.footerBox__textBox__text {
-  font-size: 15px;
-  font-weight: 400;
-  font-family: "Zen Maru Gothic";
-  line-height: 1.5;
-  letter-spacing: 0px;
-}
-
-.footerBox__textBox__link {
-  text-decoration: underline;
-}
-
-.footerBox__textBox__link:hover {
-  opacity: 0.7;
-  text-decoration: none;
-}
-
-.footerBox__textBox__text.map {
-  position: relative;
-  padding-left: 31px;
-  letter-spacing: -1px;
-  font-family: "Lexend Zetta";
-}
-
-.footerBox__textBox__text.map::before {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  width: 11px;
-  height: 16px;
-  background: url(../img/ico_map.svg) no-repeat center/contain;
-  content: "";
-}
-
 /*――――――――――――――――――――――――――――――――――――――――――――
 /* utility
 ――――――――――――――――――――――――――――――――――――――――――――――*/
