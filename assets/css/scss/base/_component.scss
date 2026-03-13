@@ -3,14 +3,32 @@
   margin: 0 auto;
 }
 
+@media screen and (max-width: 768px) {
+  .c-container {
+    padding-inline: 15px;
+  }
+}
+
 .c-mainTitle {
   font-size: 75px;
   font-family: 'Memoir';
   color: #fff;
 }
 
+@media screen and (max-width: 768px) {
+  .c-mainTitle {
+    font-size: 45px;
+  }
+}
+
 .c-subTitle {
   font-size: 45px;
   font-weight: bold;
   font-family: 'Zen Maru Gothic';
+}
+
+@media screen and (max-width: 768px) {
+  .c-subTitle {
+    font-size: 35px;
+  }
 }
