@@ -18,6 +18,7 @@
 @media screen and (max-width: 768px) {
   .c-mainTitle {
     font-size: 45px;
+    text-align: center;
   }
 }
 
@@ -30,5 +31,25 @@
 @media screen and (max-width: 768px) {
   .c-subTitle {
     font-size: 35px;
+  }
+}
+
+.pc-only {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .pc-only {
+    display: none;
+  }
+}
+
+.sp-only {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .sp-only {
+    display: block;
   }
 }
