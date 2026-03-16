@@ -311,10 +311,8 @@ button,
 input,
 optgroup,
 select,
-textarea {
-  -webkit-appearance: none; /* 1 */
-  -moz-appearance: none;
-       appearance: none;
+textarea { /* 1 */
+  appearance: none;
   vertical-align: middle;
   color: inherit;
   font: inherit;
@@ -711,7 +709,6 @@ textarea {
   background-color: #fff;
   margin: 55px auto 0;
   min-width: 336px;
-  width: -moz-fit-content;
   width: fit-content;
 }
 
@@ -739,7 +736,6 @@ textarea {
   display: block;
   box-sizing: border-box;
   -webkit-user-select: none;
-  -moz-user-select: none;
   user-select: none;
   -webkit-touch-callout: none;
   -khtml-user-select: none;
@@ -1003,8 +999,7 @@ textarea {
 .header__logo__img {
   width: 100%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .header__listBox {
@@ -1033,8 +1028,7 @@ textarea {
 .header__list__img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .header__list__title {
@@ -1236,8 +1230,7 @@ textarea {
 .footerBox__logo__img {
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 .footerBox__nav {
@@ -1256,7 +1249,6 @@ textarea {
 }
 
 .footerBox__navList__item {
-  width: -moz-fit-content;
   width: fit-content;
 }
 
@@ -1408,8 +1400,7 @@ textarea {
   z-index: 1;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .kvBox__text {
@@ -1430,7 +1421,6 @@ textarea {
   display: inline-block;
   padding-top: 2px;
   padding-left: 5px;
-  width: -moz-fit-content;
   width: fit-content;
   line-height: 1.5;
 }
@@ -1602,6 +1592,11 @@ textarea {
   padding-top: 79px;
 }
 
+@media screen and (max-width: 768px) {
+  .movieBox {
+    padding-top: 60px;
+  }
+}
 .movieBox::before {
   position: absolute;
   bottom: -24vw;
@@ -1670,8 +1665,7 @@ textarea {
 .titleIconBox__img {
   width: 40px;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .movieContents {
@@ -1682,6 +1676,12 @@ textarea {
   background-color: #fff;
 }
 
+@media screen and (max-width: 768px) {
+  .movieContents {
+    padding: 10px;
+    margin-top: 30px;
+  }
+}
 .movieContents__inner {
   position: relative;
   display: flex;
@@ -1830,8 +1830,7 @@ textarea {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .scheduleArea {
@@ -2046,8 +2045,7 @@ textarea {
 .scheduleFlexBox__imgBox__img {
   width: 100%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .scheduleListWrapper {
@@ -2134,8 +2132,7 @@ textarea {
 .scheduleList__imgBox__img {
   width: 100%;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .scheduleList__textBox {
@@ -2447,8 +2444,7 @@ textarea {
 .recruitBox__flexBox__img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .recruitBottomImgBox {
@@ -2466,8 +2462,7 @@ textarea {
 .recruitBottomImgBox__img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .blogArea {
@@ -2557,8 +2552,7 @@ textarea {
   z-index: 1;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .blogList__textBox {
@@ -2676,8 +2670,7 @@ textarea {
 .specialContents__topBox__imgBox-img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .specialContents__bottomBox {
@@ -2781,7 +2774,6 @@ textarea {
   position: relative;
   margin-left: 52px;
   padding-left: 43px;
-  width: -moz-fit-content;
   width: fit-content;
   font-size: 21px;
   font-weight: 500;

@@ -235,6 +235,12 @@
   padding-top: 79px;
 }
 
+@media screen and (max-width: 768px) {
+  .movieBox {
+    padding-top: 60px;
+  }
+}
+
 .movieBox::before {
   position: absolute;
   bottom: -24vw;
@@ -310,11 +316,17 @@
 
 .movieContents {
   padding: 16px;
-
   margin-top: 52px;
   width: 100%;
   border-radius: 28px;
   background-color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .movieContents {
+    padding: 10px;
+    margin-top: 30px;
+  }
 }
 
 .movieContents__inner {
