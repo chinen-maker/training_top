@@ -2610,6 +2610,11 @@ textarea {
   color: #fff;
 }
 
+@media screen and (max-width: 768px) {
+  .blogList__textBox {
+    text-align: center;
+  }
+}
 .blogList__textBox__date {
   font-size: 17px;
 }
@@ -2868,6 +2873,12 @@ textarea {
   letter-spacing: -1px;
 }
 
+@media screen and (max-width: 768px) {
+  .contactBox__text {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+}
 .contactInfoBox {
   max-width: 743px;
   margin: 27px auto 0;
@@ -2876,12 +2887,23 @@ textarea {
   border-radius: 60px;
 }
 
+@media screen and (max-width: 768px) {
+  .contactInfoBox {
+    padding: 25px 0 25px;
+    max-width: 450px;
+  }
+}
 .contactInfoBox__inner {
   display: flex;
   justify-content: space-between;
   padding: 0 30px 0 21px;
 }
 
+@media screen and (max-width: 768px) {
+  .contactInfoBox__inner {
+    flex-direction: column;
+  }
+}
 .contactInfoBox__tel {
   display: flex;
   flex-direction: column;
@@ -2900,6 +2922,12 @@ textarea {
   letter-spacing: -0.048em;
 }
 
+@media screen and (max-width: 768px) {
+  .contactInfoBox__tel__text {
+    margin: 0 auto;
+    text-align: center;
+  }
+}
 .contactInfoBox__tel__text::before {
   position: absolute;
   top: 50%;
@@ -2918,6 +2946,11 @@ textarea {
   color: #3DB164;
 }
 
+@media screen and (max-width: 768px) {
+  .contactInfoBox__tel__number {
+    font-size: 25px;
+  }
+}
 .contactInfoBox__tel__number-text {
   margin-right: 18px;
   font-size: 14px;
@@ -2936,6 +2969,11 @@ textarea {
   color: #1D1D1D;
 }
 
+@media screen and (max-width: 768px) {
+  .contactInfoBox__tel__reception {
+    margin: 0 auto;
+  }
+}
 .contactInfoBox__mail {
   display: flex;
   flex-direction: column;
@@ -2951,6 +2989,11 @@ textarea {
   letter-spacing: -0.048em;
 }
 
+@media screen and (max-width: 768px) {
+  .contactInfoBox__mail__text {
+    margin: 0 auto;
+  }
+}
 .contactInfoBox__mail__text::before {
   position: absolute;
   top: 50%;
@@ -2970,6 +3013,13 @@ textarea {
   background-color: #3DB164;
 }
 
+@media screen and (max-width: 768px) {
+  .contactInfoBox .c-btnBox {
+    min-width: auto;
+    max-width: 300px;
+    width: 100%;
+  }
+}
 .contactInfoBox .c-btn {
   padding-block: 14.5px 13.5px;
   border: 2px dotted #fff;
