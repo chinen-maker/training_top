@@ -91,13 +91,19 @@
   background-color: #3DB164;
 }
 
+@media screen and (max-width: 768px) {
+  .conceptArea {
+    padding-bottom: 100px;
+  }
+}
+
 .conceptArea::before {
   position: absolute;
   top: 0;
   left: 0;
   z-index: 3;
   width: 100%;
-  height: 1088px;
+  height: 100%;
   background: url(../img/bg.png) no-repeat center / cover;
   content: "";
 }
@@ -170,7 +176,15 @@
   color: #fff;
 }
 
+@media screen and (max-width: 768px) {
+  .conceptArea .c-subTitle {
+    font-size: 25px;
+  }
+}
+
 .conceptBox__textBox__text {
+  position: static;
+  z-index: 1;
   font-size: 18px;
   font-weight: 500;
   font-family: 'Zen Maru Gothic';
@@ -189,8 +203,26 @@
   margin-top: 47px;
 }
 
+@media screen and (max-width: 768px) {
+  .conceptBox__textBox__text:first-of-type{
+    margin-top: 30px;
+  }
+}
+
 .conceptBox__textBox__text + .conceptBox__textBox__text {
   margin-top: 53px;
+}
+
+@media screen and (max-width: 768px) {
+  .conceptBox__textBox__text + .conceptBox__textBox__text {
+    margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .conceptArea .c-btnBox {
+    margin-top: 20px;
+  }
 }
 
 .movieArea {
@@ -215,6 +247,13 @@
   height: 121px;
   background: url(../img/img_movie-top.png) no-repeat center / cover;
   content: "";
+}
+
+@media screen and (max-width: 768px) {
+  .movieArea::before {
+    top: -85px;
+    height: 85px;
+  }
 }
 
 .movieArea::after {
@@ -280,6 +319,12 @@
   padding-left: 62px;
 }
 
+@media screen and (max-width: 768px) {
+  .movieTitleBox {
+    padding-left: 30px;
+  }
+}
+
 .titleIconBox {
   position: absolute;
   top: -3vw;
@@ -298,20 +343,44 @@
   padding: 23px 29px;
 }
 
+@media screen and (max-width: 768px) {
+  .titleIconBoxWrapper {
+    padding: 23px 23px;
+  }
+}
+
 .titleIconBoxWrapper::before {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100px;
   aspect-ratio: 100 / 100;
   background: url(../img/ico_movie-circle.png) no-repeat center / cover;
+  animation: 20s linear infinite rotate;
+  -webkit-animation: 20s linear infinite rotate;
   content: "";
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 .titleIconBox__img {
   width: 40px;
   height: auto;
   object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+  .titleIconBox__img {
+    width: 30px;
+  }
 }
 
 .movieContents {
@@ -538,15 +607,21 @@
   padding: 0 clamp(30px, 3.9vw, 60px);
 }
 
-
 .scheduleBox::before {
   position: absolute;
   top: -3.5vw;
   left: 2.5vw;
   width: 90px;
   aspect-ratio: 90 / 164;
-  background: url(../img/img_schedule-Titledeco01.png) no-repeat center / cover;
+  background: url(../img/img_schedule-Titledeco01.png) no-repeat center / contain;
   content: "";
+}
+
+@media screen and (max-width: 768px) {
+  .scheduleBox::before {
+    width: 60px;
+    aspect-ratio: 60 / 134;
+  }
 }
 
 .scheduleFlexBox {
@@ -660,7 +735,12 @@
 .scheduleFlexBox__textBox__actions-text{
   letter-spacing: 2.1px;
   margin-top: 14px;
+}
 
+@media screen and (max-width: 768px) {
+  .scheduleFlexBox__textBox__actions-text {
+    font-size: clamp(14px, 1vw, 16px);
+  }
 }
 
 .scheduleFlexBox .c-btnBox {
@@ -819,10 +899,22 @@
   color: #20486E;
 }
 
+@media screen and (max-width: 768px) {
+  .scheduleList__textBox__title {
+    font-size: clamp(18px, 4vw, 20px);
+  }
+}
+
 .scheduleList__textBox__text {
   text-align: left;
   font-size: 18px;
   line-height: 1.8;
+}
+
+@media screen and (max-width: 768px) {
+  .scheduleList__textBox__text {
+    font-size: clamp(16px, 4vw, 18px);
+  }
 }
 
 .scheduleList .c-btnBox {
@@ -1242,6 +1334,13 @@
   position: relative;
 }
 
+@media screen and (max-width: 768px) {
+  .blogList__imgBox {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+}
+
 .blogList__imgBox::before {
   position: absolute;
   top: -17px;
@@ -1261,6 +1360,14 @@
   aspect-ratio: 106 / 103;
   background: url(../img/img_blog-label.png) no-repeat center / contain;
   content: "";
+}
+
+@media screen and (max-width: 768px) {
+  .blogList__imgBox::after {
+    width: 53px;
+    aspect-ratio: 53 / 51;
+  }
+
 }
 
 .blogList__imgBox__img {
@@ -1315,6 +1422,13 @@
   padding-top: 93px;
   padding-bottom: 70px;
   background-color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .specialArea {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 }
 
 .specialArea .c-mainTitle {
@@ -1547,6 +1661,12 @@
   color: #fff;
 }
 
+@media screen and (max-width: 768px) {
+  .contactBox .c-subTitle {
+    font-size: clamp(25px, 4vw, 35px)
+  }
+}
+
 .contactBox__text {
   margin-top: 37px;
   text-align: center;
@@ -1558,7 +1678,7 @@
 @media screen and (max-width: 768px) {
   .contactBox__text {
     margin-top: 20px;
-    font-size: 16px;
+    font-size: clamp(14px, 3vw, 16px);
   }
 }
 
@@ -1586,6 +1706,7 @@
 @media screen and (max-width: 768px) {
   .contactInfoBox__inner {
     flex-direction: column;
+    gap: 25px;
   }
 }
 
@@ -1609,6 +1730,7 @@
 @media screen and (max-width: 768px) {
   .contactInfoBox__tel__text {
     margin: 0 auto;
+    font-size: 19px;
     text-align: center;
   }
 }
@@ -1633,7 +1755,7 @@
 
 @media screen and (max-width: 768px) {
   .contactInfoBox__tel__number {
-    font-size: 25px;
+    font-size: 23px;
   }
 }
 
@@ -1658,6 +1780,7 @@
 @media screen and (max-width: 768px) {
   .contactInfoBox__tel__reception {
     margin: 0 auto;
+    font-size: 15px;
   }
 }
 
@@ -1679,6 +1802,7 @@
 @media screen and (max-width: 768px) {
   .contactInfoBox__mail__text {
     margin: 0 auto;
+    font-size: 19px;
   }
 }
 
@@ -1715,6 +1839,15 @@
 }
 
 @media screen and (max-width: 768px) {
+  .contactInfoBox .c-btn {
+    padding-block: 11.5px 10.5px;
+    min-width: auto;
+    max-width: 300px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .kvArea::after {
     height: 235px;
   }
@@ -1724,8 +1857,10 @@
   }
 
   .kvBox::before {
-    width: 140px;
-    height: 120px;
+    width: clamp(80px, calc(25.45vw - 15.45px), 180px);
+    height: clamp(95px, calc(16.54vw + 32.98px), 160px);
+    top: clamp(-3vw, calc(-0.5vw - 1px), -1vw);
+    left: clamp(0vw, calc(8vw - 60px), 6vw);
   }
 
   .kvBox__text {

@@ -668,7 +668,7 @@ textarea {
 
 @media screen and (max-width: 768px) {
   .c-mainTitle {
-    font-size: 45px !important;
+    font-size: clamp(35px, 5vw, 45px) !important;
     text-align: center;
   }
 }
@@ -680,7 +680,7 @@ textarea {
 
 @media screen and (max-width: 768px) {
   .c-subTitle {
-    font-size: 35px;
+    font-size: clamp(25px, 5vw, 35px);
   }
 }
 .pc-only {
@@ -726,6 +726,11 @@ textarea {
   border-radius: 40px;
 }
 
+@media screen and (max-width: 768px) {
+  .c-btn {
+    padding-block: 11.5px 10.5px;
+  }
+}
 .c-btn:hover {
   opacity: 0.7;
 }
@@ -1116,6 +1121,7 @@ textarea {
   .header__logo {
     position: relative;
     z-index: 60;
+    max-width: 40px;
   }
   .is-menu-open .header__logo {
     margin: 0 auto;
@@ -1198,6 +1204,11 @@ textarea {
   background-color: #CDDDBD;
 }
 
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 30px 0 60px;
+  }
+}
 .footer::after {
   position: absolute;
   bottom: 0;
@@ -1227,12 +1238,24 @@ textarea {
   gap: 15px;
 }
 
+@media screen and (max-width: 768px) {
+  .footerBox {
+    flex-direction: column;
+  }
+}
 .footerBox__logo {
   display: flex;
   justify-content: flex-start;
   max-width: 229px;
 }
 
+@media screen and (max-width: 768px) {
+  .footerBox__logo {
+    margin: 0 auto;
+    max-width: none;
+    width: clamp(120px, 28vw, 229px);
+  }
+}
 .footerBox__logo__img {
   width: 100%;
   height: 100%;
@@ -1249,12 +1272,23 @@ textarea {
   max-width: 596px;
 }
 
+@media screen and (max-width: 768px) {
+  .footerBox__nav {
+    margin: 0 auto;
+  }
+}
 .footerBox__navList {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px 75px;
 }
 
+@media screen and (max-width: 768px) {
+  .footerBox__navList {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px clamp(10px, 8vw, 75px);
+  }
+}
 .footerBox__navList__item {
   width: -moz-fit-content;
   width: fit-content;
@@ -1271,6 +1305,11 @@ textarea {
   white-space: nowrap;
 }
 
+@media screen and (max-width: 768px) {
+  .footerBox__navList__text {
+    white-space: unset;
+  }
+}
 .footerBox__navList__text::before {
   position: absolute;
   top: 50%;
@@ -1287,6 +1326,11 @@ textarea {
   gap: 34px;
 }
 
+@media screen and (max-width: 768px) {
+  .footerBox__blogBox {
+    gap: clamp(30px, 24.17vw - 60.6px, 125px);
+  }
+}
 .footerBox__blogList {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1294,6 +1338,11 @@ textarea {
   margin-top: 10px;
 }
 
+@media screen and (max-width: 768px) {
+  .footerBox__blogList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 .footerBox__blogList__link:hover {
   opacity: 0.7;
 }
@@ -1463,13 +1512,18 @@ textarea {
   background-color: #3DB164;
 }
 
+@media screen and (max-width: 768px) {
+  .conceptArea {
+    padding-bottom: 100px;
+  }
+}
 .conceptArea::before {
   position: absolute;
   top: 0;
   left: 0;
   z-index: 3;
   width: 100%;
-  height: 1088px;
+  height: 100%;
   background: url(../img/bg.png) no-repeat center/cover;
   content: "";
 }
@@ -1539,7 +1593,14 @@ textarea {
   color: #fff;
 }
 
+@media screen and (max-width: 768px) {
+  .conceptArea .c-subTitle {
+    font-size: 25px;
+  }
+}
 .conceptBox__textBox__text {
+  position: static;
+  z-index: 1;
   font-size: 18px;
   font-weight: 500;
   font-family: "Zen Maru Gothic";
@@ -1557,10 +1618,25 @@ textarea {
   margin-top: 47px;
 }
 
+@media screen and (max-width: 768px) {
+  .conceptBox__textBox__text:first-of-type {
+    margin-top: 30px;
+  }
+}
 .conceptBox__textBox__text + .conceptBox__textBox__text {
   margin-top: 53px;
 }
 
+@media screen and (max-width: 768px) {
+  .conceptBox__textBox__text + .conceptBox__textBox__text {
+    margin-top: 30px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .conceptArea .c-btnBox {
+    margin-top: 20px;
+  }
+}
 .movieArea {
   position: relative;
   padding-bottom: 205px;
@@ -1584,6 +1660,12 @@ textarea {
   content: "";
 }
 
+@media screen and (max-width: 768px) {
+  .movieArea::before {
+    top: -85px;
+    height: 85px;
+  }
+}
 .movieArea::after {
   position: absolute;
   top: 0;
@@ -1644,6 +1726,11 @@ textarea {
   padding-left: 62px;
 }
 
+@media screen and (max-width: 768px) {
+  .movieTitleBox {
+    padding-left: 30px;
+  }
+}
 .titleIconBox {
   position: absolute;
   top: -3vw;
@@ -1662,16 +1749,32 @@ textarea {
   padding: 23px 29px;
 }
 
+@media screen and (max-width: 768px) {
+  .titleIconBoxWrapper {
+    padding: 23px 23px;
+  }
+}
 .titleIconBoxWrapper::before {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100px;
   aspect-ratio: 100/100;
   background: url(../img/ico_movie-circle.png) no-repeat center/cover;
+  animation: 20s linear infinite rotate;
+  -webkit-animation: 20s linear infinite rotate;
   content: "";
 }
 
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
 .titleIconBox__img {
   width: 40px;
   height: auto;
@@ -1679,6 +1782,11 @@ textarea {
      object-fit: cover;
 }
 
+@media screen and (max-width: 768px) {
+  .titleIconBox__img {
+    width: 30px;
+  }
+}
 .movieContents {
   padding: 16px;
   margin-top: 52px;
@@ -1901,10 +2009,16 @@ textarea {
   left: 2.5vw;
   width: 90px;
   aspect-ratio: 90/164;
-  background: url(../img/img_schedule-Titledeco01.png) no-repeat center/cover;
+  background: url(../img/img_schedule-Titledeco01.png) no-repeat center/contain;
   content: "";
 }
 
+@media screen and (max-width: 768px) {
+  .scheduleBox::before {
+    width: 60px;
+    aspect-ratio: 60/134;
+  }
+}
 .scheduleFlexBox {
   position: relative;
   display: flex;
@@ -2013,6 +2127,11 @@ textarea {
   margin-top: 14px;
 }
 
+@media screen and (max-width: 768px) {
+  .scheduleFlexBox__textBox__actions-text {
+    font-size: clamp(14px, 1vw, 16px);
+  }
+}
 .scheduleFlexBox .c-btnBox {
   margin: 46px 0 0;
   min-width: clamp(280px, 23.91vw, 306px);
@@ -2164,12 +2283,22 @@ textarea {
   color: #20486E;
 }
 
+@media screen and (max-width: 768px) {
+  .scheduleList__textBox__title {
+    font-size: clamp(18px, 4vw, 20px);
+  }
+}
 .scheduleList__textBox__text {
   text-align: left;
   font-size: 18px;
   line-height: 1.8;
 }
 
+@media screen and (max-width: 768px) {
+  .scheduleList__textBox__text {
+    font-size: clamp(16px, 4vw, 18px);
+  }
+}
 .scheduleList .c-btnBox {
   margin: 51px auto 0;
   padding: 4px;
@@ -2570,6 +2699,12 @@ textarea {
   position: relative;
 }
 
+@media screen and (max-width: 768px) {
+  .blogList__imgBox {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+}
 .blogList__imgBox::before {
   position: absolute;
   top: -17px;
@@ -2591,6 +2726,12 @@ textarea {
   content: "";
 }
 
+@media screen and (max-width: 768px) {
+  .blogList__imgBox::after {
+    width: 53px;
+    aspect-ratio: 53/51;
+  }
+}
 .blogList__imgBox__img {
   position: relative;
   z-index: 1;
@@ -2644,6 +2785,12 @@ textarea {
   background-color: #fff;
 }
 
+@media screen and (max-width: 768px) {
+  .specialArea {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
 .specialArea .c-mainTitle {
   position: absolute;
   top: -6.5vw;
@@ -2865,6 +3012,11 @@ textarea {
   color: #fff;
 }
 
+@media screen and (max-width: 768px) {
+  .contactBox .c-subTitle {
+    font-size: clamp(25px, 4vw, 35px);
+  }
+}
 .contactBox__text {
   margin-top: 37px;
   text-align: center;
@@ -2876,7 +3028,7 @@ textarea {
 @media screen and (max-width: 768px) {
   .contactBox__text {
     margin-top: 20px;
-    font-size: 16px;
+    font-size: clamp(14px, 3vw, 16px);
   }
 }
 .contactInfoBox {
@@ -2902,6 +3054,7 @@ textarea {
 @media screen and (max-width: 768px) {
   .contactInfoBox__inner {
     flex-direction: column;
+    gap: 25px;
   }
 }
 .contactInfoBox__tel {
@@ -2925,6 +3078,7 @@ textarea {
 @media screen and (max-width: 768px) {
   .contactInfoBox__tel__text {
     margin: 0 auto;
+    font-size: 19px;
     text-align: center;
   }
 }
@@ -2948,7 +3102,7 @@ textarea {
 
 @media screen and (max-width: 768px) {
   .contactInfoBox__tel__number {
-    font-size: 25px;
+    font-size: 23px;
   }
 }
 .contactInfoBox__tel__number-text {
@@ -2972,6 +3126,7 @@ textarea {
 @media screen and (max-width: 768px) {
   .contactInfoBox__tel__reception {
     margin: 0 auto;
+    font-size: 15px;
   }
 }
 .contactInfoBox__mail {
@@ -2992,6 +3147,7 @@ textarea {
 @media screen and (max-width: 768px) {
   .contactInfoBox__mail__text {
     margin: 0 auto;
+    font-size: 19px;
   }
 }
 .contactInfoBox__mail__text::before {
@@ -3026,6 +3182,14 @@ textarea {
 }
 
 @media screen and (max-width: 768px) {
+  .contactInfoBox .c-btn {
+    padding-block: 11.5px 10.5px;
+    min-width: auto;
+    max-width: 300px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
   .kvArea::after {
     height: 235px;
   }
@@ -3033,8 +3197,10 @@ textarea {
     padding-inline: 15px;
   }
   .kvBox::before {
-    width: 140px;
-    height: 120px;
+    width: clamp(80px, 25.45vw - 15.45px, 180px);
+    height: clamp(95px, 16.54vw + 32.98px, 160px);
+    top: clamp(-3vw, -0.5vw - 1px, -1vw);
+    left: clamp(0vw, 8vw - 60px, 6vw);
   }
   .kvBox__text {
     top: 3.9vw;

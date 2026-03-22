@@ -17,7 +17,7 @@
 
 @media screen and (max-width: 768px) {
   .c-mainTitle {
-    font-size: 45px !important;
+    font-size: clamp(35px, 5vw, 45px) !important;
     text-align: center;
   }
 }
@@ -30,7 +30,7 @@
 
 @media screen and (max-width: 768px) {
   .c-subTitle {
-    font-size: 35px;
+    font-size: clamp(25px, 5vw, 35px)
   }
 }
 

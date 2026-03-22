@@ -4,6 +4,12 @@
   background-color: #CDDDBD;
 }
 
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 30px 0 60px;
+  }
+}
+
 .footer::after {
   position: absolute;
   bottom: 0;
@@ -34,10 +40,24 @@
   gap: 15px;
 }
 
+@media screen and (max-width: 768px) {
+  .footerBox {
+    flex-direction: column;
+  }
+}
+
 .footerBox__logo {
   display: flex;
   justify-content: flex-start;
   max-width: 229px;
+}
+
+@media screen and (max-width: 768px) {
+  .footerBox__logo {
+    margin: 0 auto;
+    max-width: none;
+    width: clamp(120px, 28vw, 229px);
+  }
 }
 
 .footerBox__logo__img {
@@ -55,10 +75,23 @@
   max-width: 596px;
 }
 
+@media screen and (max-width: 768px) {
+  .footerBox__nav {
+    margin: 0 auto;
+  }
+}
+
 .footerBox__navList {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px 75px;
+}
+
+@media screen and (max-width: 768px) {
+  .footerBox__navList {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px clamp(10px, 8vw, 75px);
+  }
 }
 
 .footerBox__navList__item {
@@ -74,6 +107,12 @@
   line-height: 1.5;
   letter-spacing: 0px;
   white-space: nowrap;
+}
+
+@media screen and (max-width: 768px) {
+  .footerBox__navList__text {
+    white-space: unset;
+  }
 }
 
 .footerBox__navList__text::before {
@@ -92,11 +131,23 @@
   gap: 34px;
 }
 
+@media screen and (max-width: 768px) {
+  .footerBox__blogBox {
+    gap: clamp(30px, calc(24.17vw - 60.6px), 125px);
+  }
+}
+
 .footerBox__blogList {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px 50px;
   margin-top: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .footerBox__blogList {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .footerBox__blogList__link:hover {
