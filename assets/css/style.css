@@ -2008,6 +2008,11 @@ textarea {
   padding: 0 clamp(30px, 5.86vw - 15px, 60px);
 }
 
+@media screen and (max-width: 768px) {
+  .scheduleBox {
+    padding: 0;
+  }
+}
 .scheduleBox::before {
   position: absolute;
   top: -3.5vw;
@@ -2190,6 +2195,11 @@ textarea {
 @media screen and (max-width: 1200px) {
   .scheduleListWrapper {
     padding: 0 15px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .scheduleListWrapper {
+    padding: 0;
   }
 }
 .scheduleList {
