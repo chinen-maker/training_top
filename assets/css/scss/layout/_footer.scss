@@ -98,6 +98,10 @@
   width: fit-content;
 }
 
+.footerBox__navList__link:hover {
+  opacity: 0.7;
+}
+
 .footerBox__navList__text {
   position: relative;
   padding-left: 21px;
