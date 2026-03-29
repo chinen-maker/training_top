@@ -1,0 +1,62 @@
+/*――――――――――――――――――――――――――――――――――――――――――――
+/* font
+――――――――――――――――――――――――――――――――――――――――――――――*/
+@mixin font($size: null, $height: null, $weight: null){
+  @if $size {
+    font-size: $size;
+  }
+  @if $height {
+    line-height: calc($height / $size);
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+}
+
+/*――――――――――――――――――――――――――――――――――――――――――――
+/* vw
+――――――――――――――――――――――――――――――――――――――――――――――*/
+@function vw( $size: 16 ) {
+  $vw: $size * (100 / 1280) + vw;
+  @return $vw;
+}
+
+@function vw-sp( $size: 16 ) {
+  $vw: $size * (100 / 768) + vw;
+  @return $vw;
+}
+
+@function cl($min-size, $max-size, $min-viewport: 768, $max-viewport: 1280) {
+  @return clamp(#{$min-size}px, calc(#{$min-size}px + (($max-size - $min-size) * ((100vw - #{$min-viewport}px) / ($max-viewport - $min-viewport)))), #{$max-size}px);
+}
+
+@function ncl($min-size, $max-size, $min-viewport: 768, $max-viewport: 1280) {
+  @return clamp(#{$max-size}px, calc(#{$min-size}px + (($max-size - $min-size) * ((100vw - #{$min-viewport}px) / (#{$max-viewport} - #{$min-viewport})))), #{$min-size}px);
+}
+
+
+@function clsp($min-size, $max-size, $min-viewport: 375, $max-viewport: 767) {
+  @return clamp(#{$min-size}px, calc(#{$min-size}px + (($max-size - $min-size) * ((100vw - #{$min-viewport}px) / ($max-viewport - $min-viewport)))), #{$max-size}px);
+}
+
+
+/*――――――――――――――――――――――――――――――――――――――――――――
+/* line-height
+――――――――――――――――――――――――――――――――――――――――――――――*/
+@mixin lineHeight($line-height: 1.6) {
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+  }
+
+  &::before {
+    margin-top: calc((1 - #{$line-height}) * 0.5em);
+  }
+
+  &::after {
+    margin-bottom: calc((1 - #{$line-height}) * 0.5em);
+  }
+}

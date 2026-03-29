@@ -30,9 +30,14 @@
 @import "page/_top.scss";
 
 
-
-
 /*――――――――――――――――――――――――――――――――――――――――――――
 /* utility
 ――――――――――――――――――――――――――――――――――――――――――――――*/
 @import "utility/_utility.scss";
+
+/*――――――――――――――――――――――――――――――――――――――――――――
+/* global
+――――――――――――――――――――――――――――――――――――――――――――――*/
+@import "global/_function.scss";
+@import "global/_index.scss";
+@import "global/_setting.scss";
