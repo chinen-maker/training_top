@@ -1,6 +1,6 @@
 .header {
   position: relative;
-  z-index: 5;
+  z-index: 10;
   padding: 21px clamp(20px, 4.7vw, 60px) 16px;
   width: 100%;
   background-color: #CFDFC0;
@@ -170,7 +170,6 @@
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
-    transition: .3s;
   }
 
   .header__listBox.is-active {

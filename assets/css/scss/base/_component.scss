@@ -1,3 +1,13 @@
+.c-section {
+  padding: 75px clamp(30px, 30px + 30 * (100vw - 768px) / 512, 60px) 75px;
+}
+
+@media screen and (max-width: 768px) {
+  .c-section {
+    padding-inline: 15px;
+  }
+}
+
 .c-container {
   max-width: 1160px;
   margin: 0 auto;
@@ -19,6 +29,7 @@
   .c-mainTitle {
     font-size: clamp(35px, 5vw, 45px) !important;
     text-align: center;
+    line-height: 1.2;
   }
 }
 

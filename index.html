@@ -105,20 +105,23 @@
     </div>
   </div>
 </header>
-<div class="kvArea">
+<div class="kvArea c-section">
   <div class="c-container">
     <div class="kvBox">
+      <a href="/" class="kvBox__link nature">
+        <img src="assets/img/img_kv-link01.png" alt="ストーリーオブネイチャー" class="kvBox__link__img">
+      </a>
+      <a href="/" class="kvBox__link forest">
+        <img src="assets/img/img_kv-link02.png" alt="森になるまで" class="kvBox__link__img">
+      </a>
       <img src="assets/img/img_kv.png" alt="キービジュアル" class="kvBox__img">
       <p class="kvBox__text">
         <img src="assets/img/img_kvBox-text.png" alt="しぜん、じゆう、そうぞう。" class="kvBox__text__img">
-        <!-- <span class="kvBox__text__word word1">しぜん、</span>
-        <span class="kvBox__text__word word2">じゆう、</span>
-        <span class="kvBox__text__word word3">そうぞう。</span> -->
       </p>
     </div>
   </div>
 </div>
-<section class="conceptArea">
+<section class="conceptArea c-section">
   <div class="c-container">
     <div class="conceptBox">
       <h2 class="c-mainTitle">Think of Living</h2>
@@ -134,7 +137,7 @@
     </div>
   </div>
 </section>
-<section class="movieArea">
+<section class="movieArea c-section">
   <div class="c-container">
     <div class="movieBox">
       <div class="movieTitleBox">
@@ -177,7 +180,7 @@
     </div>
   </div>
 </section>
-<section class="scheduleArea">
+<section class="scheduleArea c-section">
   <div class="c-container">
     <div class="scheduleBox">
       <div class="scheduleFlexBox --normal">
@@ -268,7 +271,7 @@
   </div>
 </section>
 
-<section class="recruitArea">
+<section class="recruitArea c-section">
   <div class="recruitTopImgBox">
     <div class="recruitTopImgBox__inner">
       <img src="assets/img/img_recruit-top.jpg" alt="職員採用 トップ画像" class="recruitTopImgBox__img">
@@ -319,40 +322,77 @@
   </div>
 </section>
 
-<section class="blogArea">
+<section class="blogArea c-section">
   <div class="c-container">
     <div class="blogBox">
       <h2 class="c-mainTitle">Blog</h2>
       <h3 class="c-subTitle">ブログ</h3>
-      <ul class="blogList">
-        <li class="blogList__item">
-          <div class="blogList__imgBox">
-            <img src="assets/img/img_blog01.png" alt="ブログ1" class="blogList__imgBox__img">
-          </div>
-          <div class="blogList__textBox">
-            <p class="blogList__textBox__date">2026年 / 01月09日</p>
-            <p class="blogList__textBox__title">１月　つぶやき</p>
-          </div>
-        </li>
-        <li class="blogList__item">
-          <div class="blogList__imgBox">
-            <img src="assets/img/img_blog02.png" alt="ブログ2" class="blogList__imgBox__img">
-          </div>
-          <div class="blogList__textBox">
-            <p class="blogList__textBox__date">2026年 / 01月09日</p>
-            <p class="blogList__textBox__title">１月　つぶやき</p>
-          </div>
-        </li>
-        <li class="blogList__item">
-          <div class="blogList__imgBox">
-            <img src="assets/img/img_blog03.png" alt="ブログ3" class="blogList__imgBox__img">
-          </div>
-          <div class="blogList__textBox">
-            <p class="blogList__textBox__date">2026年 / 01月09日</p>
-            <p class="blogList__textBox__title">１月　つぶやき</p>
-          </div>
-        </li>
-      </ul>
+      <div class="blogSlider">
+        <button class="blogSlider__prev">
+          <img src="assets/img/img_arrow-back.svg" alt="" class="blogSlider__prev__img">
+        </button>
+        <div class="blogSlider__viewport">
+          <ul class="blogList">
+            <li class="blogList__item">
+              <div class="blogList__imgBox">
+                <img src="assets/img/img_blog01.png" alt="ブログ1" class="blogList__imgBox__img">
+              </div>
+              <div class="blogList__textBox">
+                <p class="blogList__textBox__date">2026年 / 01月09日</p>
+                <p class="blogList__textBox__title">1月　つぶやき</p>
+              </div>
+            </li>
+            <li class="blogList__item">
+              <div class="blogList__imgBox">
+                <img src="assets/img/img_blog02.png" alt="ブログ2" class="blogList__imgBox__img">
+              </div>
+              <div class="blogList__textBox">
+                <p class="blogList__textBox__date">2026年 / 01月09日</p>
+                <p class="blogList__textBox__title">1月　つぶやき</p>
+              </div>
+            </li>
+            <li class="blogList__item">
+              <div class="blogList__imgBox">
+                <img src="assets/img/img_blog03.png" alt="ブログ3" class="blogList__imgBox__img">
+              </div>
+              <div class="blogList__textBox">
+                <p class="blogList__textBox__date">2026年 / 01月09日</p>
+                <p class="blogList__textBox__title">1月　つぶやき</p>
+              </div>
+            </li>
+            <li class="blogList__item">
+              <div class="blogList__imgBox">
+                <img src="assets/img/img_blog01.png" alt="ブログ1" class="blogList__imgBox__img">
+              </div>
+              <div class="blogList__textBox">
+                <p class="blogList__textBox__date">2026年 / 01月09日</p>
+                <p class="blogList__textBox__title">1月　つぶやき</p>
+              </div>
+            </li>
+            <li class="blogList__item">
+              <div class="blogList__imgBox">
+                <img src="assets/img/img_blog02.png" alt="ブログ2" class="blogList__imgBox__img">
+              </div>
+              <div class="blogList__textBox">
+                <p class="blogList__textBox__date">2026年 / 01月09日</p>
+                <p class="blogList__textBox__title">1月　つぶやき</p>
+              </div>
+            </li>
+            <li class="blogList__item">
+              <div class="blogList__imgBox">
+                <img src="assets/img/img_blog03.png" alt="ブログ3" class="blogList__imgBox__img">
+              </div>
+              <div class="blogList__textBox">
+                <p class="blogList__textBox__date">2026年 / 01月09日</p>
+                <p class="blogList__textBox__title">1月　つぶやき</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <button class="blogSlider__next">
+          <img src="assets/img/img_arrow-next.svg" alt="" class="blogSlider__next__img">
+        </button>
+      </div>
       <a href="/" class="c-btnBox">
         <span class="c-btn">ブログ一覧へ</span>
       </a>
@@ -360,7 +400,7 @@
   </div>
 </section>
 
-<section class="specialArea">
+<section class="specialArea c-section">
   <h2 class="c-mainTitle">Special Contents</h2>
   <div class="c-container">
     <div class="specialBox">
@@ -408,7 +448,7 @@
   </div>
 </section>
 
-<section class="contactArea">
+<section class="contactArea c-section">
   <div class="c-container">
     <div class="contactBox">
       <h2 class="c-mainTitle">Contact</h2>
