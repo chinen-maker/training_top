@@ -20,7 +20,7 @@
 }
 
 .c-mainTitle {
-  font-size: 75px;
+  font-size: clamp(50px,calc(50px + 25 * ((100vw - 768px) / 512)),75px);
   font-family: 'Memoir';
   color: #fff;
 }
@@ -34,7 +34,7 @@
 }
 
 .c-subTitle {
-  font-size: 45px;
+  font-size: clamp(35px, calc(35px + 10 * ((100vw - 768px) / 512)), 45px);
   font-weight: bold;
   font-family: 'Zen Maru Gothic';
 }
