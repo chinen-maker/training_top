@@ -1,9 +1,4 @@
-// 【確認用】
-console.log('--- JSファイルの読み込み自体は成功しています ---');
-
 const initApp = () => {
-  console.log('--- DOMの準備が整いました（initApp開始） ---');
-
   // ===============================
   // 1. ハンバーガーメニュー
   // ===============================
@@ -15,70 +10,87 @@ const initApp = () => {
       menu.classList.toggle("is-active");
       document.body.classList.toggle("is-menu-open");
     });
-    console.log('ハンバーガー準備OK');
   }
 
   // ===============================
-  // 2. スライダーの初期化
+  // 2. 無限ループスライダー
   // ===============================
   const list = document.querySelector('.blogList');
   const items = document.querySelectorAll('.blogList__item');
   const prevBtn = document.querySelector('.blogSlider__prev');
   const nextBtn = document.querySelector('.blogSlider__next');
 
-  // 要素チェック
   if (list && items.length > 0 && prevBtn && nextBtn) {
     let currentIndex = 0;
+    let isTransitioning = false;
+    const originalCount = items.length;
 
-    // 表示枚数を画面幅で判定
-    const getVisibleCount = () => {
-      return window.innerWidth <= 768 ? 1 : 3;
+    const getVisibleCount = () => window.innerWidth <= 768 ? 1 : 3;
+
+    // --- ★修正ポイント: この箱の中に正しい処理を入れる ---
+    const setupClones = () => {
+      items.forEach((item, index) => {
+        // オリジナルにクラスを付与 (2, 5, 8...)
+        if (index % 3 === 1) {
+          item.classList.add('is-step');
+        }
+
+        // クラスが付いた状態でコピーを作成
+        const firstClone = item.cloneNode(true);
+        const lastClone = item.cloneNode(true);
+
+        list.appendChild(firstClone); // 後ろに追加
+        list.insertBefore(lastClone, list.firstChild); // 前に追加
+      });
+      currentIndex = originalCount; 
     };
 
-    // スライダー更新（移動）処理
-    const updateSlider = () => {
-      const visibleCount = getVisibleCount();
-      // 全体のページ数（インデックス）を計算
-      // 6枚あるとき：PC(3枚ずつ)ならmaxIndexは1。SP(1枚ずつ)ならmaxIndexは5。
-      const maxIndex = (window.innerWidth <= 768) ? items.length - 1 : Math.ceil(items.length / 3) - 1;
-
-      // ガード：画面幅を変えた時に今の位置がはみ出さないようにする
-      if (currentIndex > maxIndex) currentIndex = maxIndex;
-
+    const updateSlider = (withTransition = true) => {
       const style = window.getComputedStyle(list);
       const gap = parseFloat(style.gap) || 0;
-      const itemWidth = items[0].offsetWidth;
+      const itemWidth = list.children[0].offsetWidth;
 
-      // 移動距離の計算
-      // PCの場合：currentIndexが1の時、3枚分飛ばす必要がある
-      const multiplier = (window.innerWidth <= 768) ? currentIndex : currentIndex * 3;
-      const moveDistance = (itemWidth + gap) * multiplier;
-      
+      list.style.transition = withTransition ? 'transform 0.4s ease' : 'none';
+      const moveDistance = (itemWidth + gap) * currentIndex;
       list.style.transform = `translateX(-${moveDistance}px)`;
-      console.log(`移動中... 現在のIndex: ${currentIndex}`);
     };
 
-    // 次へボタン
+    list.addEventListener('transitionend', () => {
+      isTransitioning = false;
+      if (currentIndex >= originalCount * 2) {
+        currentIndex = originalCount;
+        updateSlider(false);
+      } else if (currentIndex <= 0) {
+        currentIndex = originalCount;
+        updateSlider(false);
+      }
+    });
+
     nextBtn.addEventListener('click', () => {
-      const maxIndex = (window.innerWidth <= 768) ? items.length - 1 : Math.ceil(items.length / 3) - 1;
-      currentIndex = (currentIndex < maxIndex) ? currentIndex + 1 : 0;
-      updateSlider();
+      if (isTransitioning) return;
+      isTransitioning = true;
+      currentIndex += getVisibleCount();
+      updateSlider(true);
     });
 
-    // 前へボタン
     prevBtn.addEventListener('click', () => {
-      const maxIndex = (window.innerWidth <= 768) ? items.length - 1 : Math.ceil(items.length / 3) - 1;
-      currentIndex = (currentIndex > 0) ? currentIndex - 1 : maxIndex;
-      updateSlider();
+      if (isTransitioning) return;
+      isTransitioning = true;
+      currentIndex -= getVisibleCount();
+      updateSlider(true);
     });
 
-    window.addEventListener('resize', updateSlider);
-    updateSlider(); // 初期表示
-    console.log('スライダー準備OK');
+    // ここで上で定義した setupClones を呼ぶ
+    setupClones();
+    updateSlider(false);
+
+    window.addEventListener('resize', () => {
+      updateSlider(false);
+    });
   }
 };
 
-// 最後に initApp を実行する
+// 最後に initApp 自体を実行する
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initApp);
 } else {
