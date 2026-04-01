@@ -1,0 +1,54 @@
+/*――――――――――――――――――――――――――――――――――――――――――――
+/* 余白調整
+――――――――――――――――――――――――――――――――――――――――――――――*/
+.u-pd {
+padding: 0 60px;
+}
+.u-pd-left {
+padding-left: 60px;
+}
+.u-pd-right {
+padding-right: 60px;
+}
+.u-pd0-left {
+margin-left: -60px;
+}
+.u-pd0-right {
+margin-right: -60px;
+}
+
+@include mid {
+.u-pd {
+    padding: 0 30px;
+}
+.u-pd-left {
+    padding-left: 30px;
+}
+.u-pd-right {
+    padding-right: 30px;
+}
+.u-pd0-left {
+    margin-left: -30px;
+}
+.u-pd0-right {
+    margin-right: -30px;
+}
+}
+
+@include sp {
+.u-pd {
+    padding: 0 15px;
+}
+.u-pd-left {
+    padding-left: 15px;
+}
+.u-pd-right {
+    padding-right: 15px;
+}
+.u-pd0-left {
+    margin-left: -15px;
+}
+.u-pd0-right {
+    margin-right: -15px;
+}
+}

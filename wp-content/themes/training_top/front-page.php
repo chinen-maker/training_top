@@ -1,0 +1,579 @@
+<?php get_header(); ?>
+
+<header class="header">
+  <div class="header__inner">
+    <h1 class="header__logo">
+      <a href="/" class="header__logo__link">
+        <div class="header__logo__imgBox">
+          <img src="<?php echo get_template_directory_uri(); ?>/img/header_logo.png" class="header__logo__img" alt="吉瀬こどもの森">
+        </div>
+      </a>
+    </h1>
+    <button type="button" class="header__hamburger">
+      <span class="header__hamburger__line"></span>
+      <span class="header__hamburger__line"></span>
+      <span class="header__hamburger__line"></span>
+    </button>
+    <div class="header__listBox">
+      <ul class="header__list">
+        <li class="header__list__item">
+          <a href="/" class="header__list__link">
+            <div class="header__list__imgBox">
+              <picture>
+                <source srcset="assets/img/img_headerArrow-sp.png" media="(max-width:768px)">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/header_story.png" alt="ストーリー・オブ・ネイチャー" class="header__list__img">
+              </picture>
+            </div>
+            <p class="header__list__title">ストーリー・オブ・ネイチャー</p>
+          </a>
+        </li>
+        <li class="header__list__item">
+          <a href="/" class="header__list__link">
+            <div class="header__list__imgBox">
+              <picture>
+                <source srcset="assets/img/img_headerArrow-sp.png" media="(max-width:768px)">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/header_introduction.png" alt="園について" class="header__list__img">
+              </picture>
+            </div>
+            <p class="header__list__title">園について</p>
+          </a>
+        </li>
+        <li class="header__list__item">
+          <a href="/" class="header__list__link">
+            <div class="header__list__imgBox">
+              <picture>
+                <source srcset="assets/img/img_headerArrow-sp.png" media="(max-width:768px)">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/header_life.png" alt="園の生活" class="header__list__img">
+              </picture>
+            </div>
+            <p class="header__list__title">園の生活</p>
+          </a>
+        </li>
+        <li class="header__list__item">
+          <a href="/" class="header__list__link">
+            <div class="header__list__imgBox">
+              <picture>
+                <source srcset="assets/img/img_headerArrow-sp.png" media="(max-width:768px)">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/header_guidance.png" alt="入園案内" class="header__list__img">
+              </picture>
+            </div>
+            <p class="header__list__title">入園案内</p>
+          </a>
+        </li>
+        <li class="header__list__item">
+          <a href="/" class="header__list__link">
+            <div class="header__list__imgBox">
+              <picture>
+                <source srcset="assets/img/img_headerArrow-sp.png" media="(max-width:768px)">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/header_blog.png" alt="ブログ" class="header__list__img">
+              </picture>
+            </div>
+            <p class="header__list__title">ブログ</p>
+          </a>
+        </li>
+        <li class="header__list__item">
+          <a href="/" class="header__list__link">
+            <div class="header__list__imgBox">
+              <picture>
+                <source srcset="assets/img/img_headerArrow-sp.png" media="(max-width:768px)">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/header_recruit.png" alt="職員採用" class="header__list__img">
+              </picture>
+            </div>
+            <p class="header__list__title">職員採用</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+<div class="kvArea c-section">
+  <div class="c-container">
+    <div class="kvBox">
+      <a href="/" class="kvBox__link nature">
+        <img src="<?php echo get_template_directory_uri(); ?>/img/img_kv-link01.png" alt="ストーリーオブネイチャー" class="kvBox__link__img">
+      </a>
+      <a href="/" class="kvBox__link forest">
+        <img src="<?php echo get_template_directory_uri(); ?>/img/img_kv-link02.png" alt="森になるまで" class="kvBox__link__img">
+      </a>
+      <img src="<?php echo get_template_directory_uri(); ?>/img/img_kv.png" alt="キービジュアル" class="kvBox__img">
+      <p class="kvBox__text">
+        <img src="<?php echo get_template_directory_uri(); ?>/img/img_kvBox-text.png" alt="しぜん、じゆう、そうぞう。" class="kvBox__text__img">
+      </p>
+    </div>
+  </div>
+</div>
+<section class="conceptArea c-section">
+  <div class="c-container">
+    <div class="conceptBox">
+      <h2 class="c-mainTitle">Think of Living</h2>
+      <div class="conceptBox__textBox">
+        <h3 class="c-subTitle">生きるの根っこを作る</h3>
+        <p class="conceptBox__textBox__text">自然と触れあうよろこび。<br>どこまでも自由なこころ。<br>想像して創造するちから。</p>
+        <p class="conceptBox__textBox__text">嘉瀬こどもの森では<br>生きることに真撃に向き合う保育を実践し、<br>遊びをとおして夢中になれる大切なものを、<br>ひとつひとつ、こどもたちに手渡します。</p>
+        <p class="conceptBox__textBox__text">この森で本物と出会い、<br>本質と向き合った日々は、いつか人生の土台となる。<br>明日につながる”生きるの根っこ”を、<br>みんなで大事に育てています。</p>
+        <a href="/" class="c-btnBox">
+          <span class="c-btn">嘉瀬こどもの森について</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="movieArea c-section">
+  <div class="c-container">
+    <div class="movieBox">
+      <div class="movieTitleBox">
+        <div class="titleIconBox">
+          <div class="titleIconBoxWrapper">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/ico_movie.png" width="40" height="41" alt="タイトルアイコン" class="titleIconBox__img">
+          </div>
+        </div>
+        <h2 class="c-mainTitle">MOVIE</h2>
+      </div>
+      <div class="movieContents">
+        <div class="movieContents__inner">
+          <div class="movieContents__textBox">
+            <p class="movieContents__textBox__text">園の雰囲気がわかる</p>
+            <a href="/">
+              <h3 class="c-subTitle">園の紹介MOVIE</h3>
+            </a>
+          </div>
+          <div class="movieContents__imgBoxWrapper">
+            <div class="movieContents__imgBox">
+              <div class="movieContents__imgInner pic1">
+                <div class="movieContents__imgInner__imgBox">
+                  <img src="<?php echo get_template_directory_uri(); ?>/img/img_movie01.png" alt="園の紹介MOVIE1" class="movieContents__imgInner__img">
+                </div>
+              </div>
+              <div class="movieContents__imgInner pic2">
+                <div class="movieContents__imgInner__imgBox">
+                  <img src="<?php echo get_template_directory_uri(); ?>/img/img_movie02.png" alt="園の紹介MOVIE2" class="movieContents__imgInner__img">
+                </div>
+              </div>
+              <div class="movieContents__imgInner pic3">
+                <div class="movieContents__imgInner__imgBox">
+                  <img src="<?php echo get_template_directory_uri(); ?>/img/img_movie03.png" alt="園の紹介MOVIE3" class="movieContents__imgInner__img">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="scheduleArea c-section">
+  <div class="c-container">
+    <div class="scheduleBox">
+      <div class="scheduleFlexBox --normal">
+        <div class="scheduleFlexBox__textBox">
+          <h2 class="c-mainTitle">Daily Schedule</h2>
+          <div class="scheduleFlexBox__textBox__actions">
+            <h3 class="c-subTitle">園での一日</h3>
+            <p class="scheduleFlexBox__textBox__actions-text">園で過ごす一日の様子を紹介します。</p>
+            <a href="/" class="c-btnBox">
+              <span class="c-btn">詳細へ</span>
+            </a>
+          </div>
+        </div>
+        <div class="scheduleFlexBox__imgBox">
+          <img src="<?php echo get_template_directory_uri(); ?>/img/img_schedule01.png" alt="園での一日1" class="scheduleFlexBox__imgBox__img">
+        </div>
+      </div>
+      <div class="scheduleFlexBox --reverse">
+        <div class="scheduleFlexBox__textBox">
+          <h2 class="c-mainTitle">Job Description</h2>
+          <div class="scheduleFlexBox__textBox__actionsBox">
+            <div class="scheduleFlexBox__textBox__actions">
+              <h3 class="c-subTitle">募集要項</h3>
+              <p class="scheduleFlexBox__textBox__actions-text">募集内容や応募要項はこちらをご確認ください。</p>
+              <a href="/" class="c-btnBox">
+                <span class="c-btn">詳細へ</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="scheduleFlexBox__imgBox">
+          <img src="<?php echo get_template_directory_uri(); ?>/img/img_schedule02.png" alt="園での一日2" class="scheduleFlexBox__imgBox__img">
+        </div>
+      </div>
+    </div>
+    <div class="scheduleListWrapper">
+      <ul class="scheduleList">
+          <li class="scheduleList__item --list1">
+            <div class="scheduleList__imgBox">
+              <img src="<?php echo get_template_directory_uri(); ?>/img/img_scheduleList01.png" alt="写真ギャラリー" class="scheduleList__imgBox__img">
+            </div>
+            <div class="scheduleList__textBox">
+              <p class="scheduleList__textBox__title">写真ギャラリー</p>
+              <p class="scheduleList__textBox__text">園内の様子を写真でご覧いただけます。</p>
+            </div>
+            <a href="/" class="c-btnBox">
+              <span class="c-btn">詳細ページへ</span>
+            </a>
+          </li>
+          <li class="scheduleList__item --list2">
+            <div class="scheduleList__imgBox">
+              <img src="<?php echo get_template_directory_uri(); ?>/img/img_scheduleList02.png" alt="年間行事" class="scheduleList__imgBox__img">
+            </div>
+            <div class="scheduleList__textBox">
+              <p class="scheduleList__textBox__title">年間行事</p>
+              <p class="scheduleList__textBox__text">一年を通してさまざまな行事を予定しています。</p>
+            </div>
+            <a href="/" class="c-btnBox">
+              <span class="c-btn">詳細ページへ</span>
+            </a>
+          </li>
+          <li class="scheduleList__item --list3">
+            <div class="scheduleList__imgBox">
+              <img src="<?php echo get_template_directory_uri(); ?>/img/img_scheduleList03.png" alt="よくある質問" class="scheduleList__imgBox__img">
+            </div>
+            <div class="scheduleList__textBox">
+              <p class="scheduleList__textBox__title">よくある質問</p>
+              <p class="scheduleList__textBox__text">皆さまからよく寄せられる質問とその回答はこちらをご覧ください。</p>
+            </div>
+            <a href="/" class="c-btnBox">
+              <span class="c-btn">詳細ページへ</span>
+            </a>
+          </li>
+          <li class="scheduleList__item --list4">
+            <div class="scheduleList__imgBox">
+              <img src="<?php echo get_template_directory_uri(); ?>/img/img_scheduleList04.png" alt="お問い合わせ" class="scheduleList__imgBox__img">
+            </div>
+            <div class="scheduleList__textBox">
+              <p class="scheduleList__textBox__title">お問い合わせ</p>
+              <p class="scheduleList__textBox__text">ご相談やご質問などございましたら、お気軽にお問い合わせください。</p>
+            </div>
+            <a href="/" class="c-btnBox">
+              <span class="c-btn">詳細ページへ</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+  </div>
+</section>
+
+<section class="recruitArea c-section">
+  <div class="recruitTopImgBox">
+    <div class="recruitTopImgBox__inner">
+      <img src="<?php echo get_template_directory_uri(); ?>/img/img_recruit-top.jpg" alt="職員採用 トップ画像" class="recruitTopImgBox__img">
+      <img src="<?php echo get_template_directory_uri(); ?>/img/img_recruit-top.jpg" alt="職員採用 トップ画像" class="recruitTopImgBox__img">
+    </div>
+  </div>
+  <div class="recruitContents">
+    <div class="c-container">
+      <div class="recruitBox">
+        <h2 class="c-mainTitle">Staff Recruitment</h2>
+        <h3 class="c-subTitle">職員採用</h3>
+        <div class="recruitBox__flexBoxWrapper">
+          <div class="recruitBox__flexBox">
+            <div class="recruitBox__flexBox__message">
+              <div class="recruitBox__flexBox__message-vertical">
+                <p class="recruitBox__flexBox__message-vertical__text">あなたにしか</p>
+                <p class="recruitBox__flexBox__message-vertical__text">歩けない道を</p>
+                <p class="recruitBox__flexBox__message-vertical__text">ささえたい。</p>
+              </div>
+              <div class="recruitBox__flexBox__message-horizontal">
+                <p class="recruitBox__flexBox__message-horizontal__text">こどもも大人も、</p>
+                <p class="recruitBox__flexBox__message-horizontal__text">ともに育む園。</p>
+              </div>
+            </div>
+            <div class="recruitBox__flexBox__inner">
+              <div class="recruitBox__flexBox__textBox">
+                <p class="recruitBox__flexBox__text">こどもたちの成長は、たくさんの驚きや発見の連続です。<br class="pc-only">
+                  オンリーワンとして誇れる園を目指す。
+                </p>
+                <p class="recruitBox__flexBox__text">これからを生きるこどもたちに、<br class="pc-only">
+                  いきるよろこびやしあわせな気持ちを手渡せる保育者に出会いたいと思っています。そして、園としても、先生たち自身が「ありのままの自分」をいきるサポートを惜しみません。
+                </p>
+                <a href="/" class="c-btnBox">
+                  <span class="c-btn">嘉瀬こどもの森について</span>
+                </a>
+              </div>
+              <div class="recruitBox__flexBox__imgBox">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/img_recruit01.png" alt="職員採用 ボトム画像" class="recruitBox__flexBox__img">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="recruitBottomImgBox">
+    <img src="<?php echo get_template_directory_uri(); ?>/img/img_recruit-bottom.jpg" alt="" class="recruitBottomImgBox__img">
+  </div>
+</section>
+
+<section class="blogArea c-section">
+  <div class="c-container">
+    <div class="blogBox">
+      <h2 class="c-mainTitle">Blog</h2>
+      <h3 class="c-subTitle">ブログ</h3>
+      <div class="blogSlider">
+        <button class="blogSlider__prev">
+          <img src="<?php echo get_template_directory_uri(); ?>/img/img_arrow-back.svg" alt="" class="blogSlider__prev__img">
+        </button>
+        <div class="blogSlider__viewport">
+          <ul class="blogList">
+            <li class="blogList__item">
+              <div class="blogList__imgBox">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/img_blog01.png" alt="ブログ1" class="blogList__imgBox__img">
+              </div>
+              <div class="blogList__textBox">
+                <p class="blogList__textBox__date">2026年 / 01月09日</p>
+                <p class="blogList__textBox__title">1月　つぶやき</p>
+              </div>
+            </li>
+            <li class="blogList__item">
+              <div class="blogList__imgBox">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/img_blog02.png" alt="ブログ2" class="blogList__imgBox__img">
+              </div>
+              <div class="blogList__textBox">
+                <p class="blogList__textBox__date">2026年 / 01月09日</p>
+                <p class="blogList__textBox__title">1月　つぶやき</p>
+              </div>
+            </li>
+            <li class="blogList__item">
+              <div class="blogList__imgBox">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/img_blog03.png" alt="ブログ3" class="blogList__imgBox__img">
+              </div>
+              <div class="blogList__textBox">
+                <p class="blogList__textBox__date">2026年 / 01月09日</p>
+                <p class="blogList__textBox__title">1月　つぶやき</p>
+              </div>
+            </li>
+            <li class="blogList__item">
+              <div class="blogList__imgBox">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/img_blog01.png" alt="ブログ1" class="blogList__imgBox__img">
+              </div>
+              <div class="blogList__textBox">
+                <p class="blogList__textBox__date">2026年 / 01月09日</p>
+                <p class="blogList__textBox__title">1月　つぶやき</p>
+              </div>
+            </li>
+            <li class="blogList__item">
+              <div class="blogList__imgBox">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/img_blog02.png" alt="ブログ2" class="blogList__imgBox__img">
+              </div>
+              <div class="blogList__textBox">
+                <p class="blogList__textBox__date">2026年 / 01月09日</p>
+                <p class="blogList__textBox__title">1月　つぶやき</p>
+              </div>
+            </li>
+            <li class="blogList__item">
+              <div class="blogList__imgBox">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/img_blog03.png" alt="ブログ3" class="blogList__imgBox__img">
+              </div>
+              <div class="blogList__textBox">
+                <p class="blogList__textBox__date">2026年 / 01月09日</p>
+                <p class="blogList__textBox__title">1月　つぶやき</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <button class="blogSlider__next">
+          <img src="<?php echo get_template_directory_uri(); ?>/img/img_arrow-next.svg" alt="" class="blogSlider__next__img">
+        </button>
+      </div>
+      <a href="/" class="c-btnBox">
+        <span class="c-btn">ブログ一覧へ</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="specialArea c-section">
+  <h2 class="c-mainTitle">Special Contents</h2>
+  <div class="c-container">
+    <div class="specialBox">
+      <div class="specialContents left">
+        <div class="specialContents__topBox">
+          <div class="specialContents__topBox__textBox">
+            <p class="specialContents__topBox__textBox-text">Special</p>
+            <p class="specialContents__topBox__textBox-text">Contents #01</p>
+            <img src="<?php echo get_template_directory_uri(); ?>/img/img_special-txt01.png" alt="" class="specialContents__topBox__textBox-img">
+          </div>
+          <div class="specialContents__topBox__imgBox">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/img_special01.png" alt="Special Contents01" class="specialContents__topBox__imgBox-img">
+          </div>
+        </div>
+        <div class="specialContents__bottomBox">
+          <p class="specialContents__bottomBox__text">“ほんものに出会い、ほんもので育つ”。嘉瀬こどもの森・牛津こどもの森の両園に共通する理念です。園で育つひとりひとりの「生きるの根っこ＝土台」は、やがて豊かな森になります。</p>
+          <div class="specialContents__bottomBox__btnBox">
+            <a href="" class="specialContents__bottomBox__btnBox-btn">
+              <img src="<?php echo get_template_directory_uri(); ?>/img/ico_arrow.svg" alt="Special Contents02" class="specialContents__bottomBox__btnBox-img">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="specialContents right">
+        <div class="specialContents__topBox">
+          <div class="specialContents__topBox__textBox">
+            <p class="specialContents__topBox__textBox-text">Special</p>
+            <p class="specialContents__topBox__textBox-text">Contents #02</p>
+            <img src="<?php echo get_template_directory_uri(); ?>/img/img_special-txt02.png" alt="" class="specialContents__topBox__textBox-img">
+          </div>
+          <div class="specialContents__topBox__imgBox">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/img_special02.png" alt="" class="specialContents__topBox__imgBox-img">
+          </div>
+        </div>
+        <div class="specialContents__bottomBox">
+          <p class="specialContents__bottomBox__text">遊びがどんどん豊かになる“自然”が、嘉瀬のアイデンティティ。小さな森のような園庭、近くの田畑や公園での自然体験が、こどもたちの感性を豊かにしています。</p>
+          <div class="specialContents__bottomBox__btnBox">
+            <a href="" class="specialContents__bottomBox__btnBox-btn">
+              <img src="<?php echo get_template_directory_uri(); ?>/img/ico_arrow.svg" alt="" class="specialContents__bottomBox__btnBox-img">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contactArea c-section">
+  <div class="c-container">
+    <div class="contactBox">
+      <h2 class="c-mainTitle">Contact</h2>
+      <h3 class="c-subTitle">お問い合わせ</h3>
+      <p class="contactBox__text">当園へのお問い合わせ・ご質問はこちらから承ります。</p>
+      <div class="contactInfoBox">
+        <div class="contactInfoBox__inner">
+          <div class="contactInfoBox__tel">
+            <p class="contactInfoBox__tel__text">電話でのお問い合わせ</p>
+            <p class="contactInfoBox__tel__number"><span class="contactInfoBox__tel__number-text">Tel</span>0952-26-2043</p>
+            <p class="contactInfoBox__tel__reception">受付時間 ／ 月〜金 8:00~17:00</p>
+          </div>
+          <div class="contactInfoBox__mail">
+            <p class="contactInfoBox__mail__text">メールでのお問い合わせ</p>
+            <a href="/" class="c-btnBox">
+              <span class="c-btn">お問い合わせフォームへ</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footerInner">
+    <div class="footerBox">
+      <div class="footerBox__logo">
+        <img src="<?php echo get_template_directory_uri(); ?>/img/img_footerLogo.png" alt="footerロゴ" class="footerBox__logo__img">
+      </div>
+      <div class="footerBox__nav">
+        <ul class="footerBox__navList">
+          <li class="footerBox__navList__item">
+            <a href="" class="footerBox__navList__link">
+              <p class="footerBox__navList__text">トップページ</p>
+            </a>
+          </li>
+          <li class="footerBox__navList__item">
+            <a href="" class="footerBox__navList__link">
+              <p class="footerBox__navList__text">園の生活</p>
+            </a>
+          </li>
+          <li class="footerBox__navList__item">
+            <a href="" class="footerBox__navList__link">
+              <p class="footerBox__navList__text">交通アクセス</p>
+            </a>
+          </li>
+          <li class="footerBox__navList__item">
+            <a href="" class="footerBox__navList__link">
+              <p class="footerBox__navList__text">ストーリー・オブ・ネイチャー</p>
+            </a>
+          </li>
+          <li class="footerBox__navList__item">
+            <a href="" class="footerBox__navList__link">
+              <p class="footerBox__navList__text">入園案内</p>
+            </a>
+          </li>
+          <li class="footerBox__navList__item">
+            <a href="" class="footerBox__navList__link">
+              <p class="footerBox__navList__text">お問い合わせ</p>
+            </a>
+          </li>
+          <li class="footerBox__navList__item">
+            <a href="" class="footerBox__navList__link">
+              <p class="footerBox__navList__text">園について</p>
+            </a>
+          </li>
+          <li class="footerBox__navList__item">
+            <a href="" class="footerBox__navList__link">
+              <p class="footerBox__navList__text">職員採用</p>
+            </a>
+          </li>
+        </ul>
+        <div class="footerBox__blogBox">
+          <div class="footerBox__blogBox__left">
+            <p class="footerBox__navList__text">ブログ</p>
+            <ul class="footerBox__blogList">
+              <li class="footerBox__blogList__item">
+                <a href="/" class="footerBox__blogList__link">
+                  <p class="footerBox__blogList__text">つぶやき</p>
+                </a>
+              </li>
+              <li class="footerBox__blogList__item">
+                <a href="/" class="footerBox__blogList__link">
+                  <p class="footerBox__blogList__text">お知らせ</p>
+                </a>
+              </li>
+              <li class="footerBox__blogList__item">
+                <a href="/" class="footerBox__blogList__link">
+                  <p class="footerBox__blogList__text">採用情報</p>
+                </a>
+              </li>
+              <li class="footerBox__blogList__item">
+                <a href="/" class="footerBox__blogList__link">
+                  <p class="footerBox__blogList__text">行事関連</p>
+                </a>
+              </li>
+              <li class="footerBox__blogList__item">
+                <a href="/" class="footerBox__blogList__link">
+                  <p class="footerBox__blogList__text">MOVIE</p>
+                </a>
+              </li>
+              <li class="footerBox__blogList__item">
+                <a href="/" class="footerBox__blogList__link">
+                  <p class="footerBox__blogList__text">情報公開</p>
+                </a>
+              </li>
+              <li class="footerBox__blogList__item">
+                <a href="/" class="footerBox__blogList__link">
+                  <p class="footerBox__blogList__text">苦情解決</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="footerBox__blogBox__right">
+            <ul class="footerBox__snsList">
+              <li class="footerBox__snsList__item">
+                <a href="#" class="footerBox__snsList__link">
+                  <img src="<?php echo get_template_directory_uri(); ?>/img/ico_insta.png" alt="Instagramアイコン" class="footerBox__snsList__img">
+                </a>
+              </li>
+              <li class="footerBox__snsList__item">
+                <a href="#" class="footerBox__snsList__link">
+                  <img src="<?php echo get_template_directory_uri(); ?>/img/ico_youtube.png" alt="YouTubeアイコン" class="footerBox__snsList__img">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footerBox__textBox">
+          <p class="footerBox__textBox__text">学校法人清風学園　嘉瀬こどもの森</p>
+          <p class="footerBox__textBox__text">〒840-0863 佐賀市嘉瀬町大字十五57-1</p>
+          <a href="" class="footerBox__textBox__link">
+            <p class="footerBox__textBox__text map">GoogleMap</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/jquery-3.6.1.min.js"></script>
+<script src="assets/js/slick.min.js"></script>
+<script src="assets/js/desvg.js"></script>
+<script src="assets/js/main.js"></script>
+
+<?php get_footer(); ?>

@@ -1,0 +1,138 @@
+/* ============================================================
+   Lexend Zetta - Static Fonts (各ウェイト)
+   ============================================================ */
+
+@font-face {
+  font-family: 'Lexend Zetta';
+  src: url('../font/LexendZetta-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lexend Zetta';
+  src: url('../font/LexendZetta-ExtraLight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lexend Zetta';
+  src: url('../font/LexendZetta-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lexend Zetta';
+  src: url('../font/LexendZetta-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lexend Zetta';
+  src: url('../font/LexendZetta-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lexend Zetta';
+  src: url('../font/LexendZetta-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lexend Zetta';
+  src: url('../font/LexendZetta-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lexend Zetta';
+  src: url('../font/LexendZetta-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lexend Zetta';
+  font-weight: 900;
+  src: url('../font/LexendZetta-Black.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --- 可変フォント (これ1つで全ウェイトをカバー可能) --- */
+@font-face {
+  font-family: 'Lexend Zetta Variable';
+  src: url('../font/LexendZetta-VariableFont_wght.woff2') format('woff2-variations'),
+       url('../font/LexendZetta-VariableFont_wght.woff2') format('woff2');
+  font-weight: 100 900; /* 100から900まで対応 */
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ============================================================
+   Memoir シリーズ
+   ============================================================ */
+
+@font-face {
+  font-family: 'Memoir';
+  src: url('../font/memoir.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Memoir Round';
+  src: url('../font/memoir-round.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Memoir Square';
+  src: url('../font/memoir-square.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ============================================================
+   SCSS Variables
+   ============================================================ */
+
+$font-family: 'Lexend Zetta', sans-serif;
+$font-maven: 'Maven Pro', sans-serif;
+$container-width: 1280px;
+
+/* ============================================================
+   Media Query Mixins
+   ============================================================ */
+
+@mixin sp {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin mid {
+  @media (max-width: 1023px) {
+    @content;
+  }
+}

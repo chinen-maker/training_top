@@ -1,0 +1,66 @@
+.c-section {
+  padding: 75px clamp(30px, 30px + 30 * (100vw - 768px) / 512, 60px) 75px;
+}
+
+@media screen and (max-width: 768px) {
+  .c-section {
+    padding-inline: 15px;
+  }
+}
+
+.c-container {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .c-container {
+    padding-inline: 15px;
+  }
+}
+
+.c-mainTitle {
+  font-size: clamp(50px,calc(50px + 25 * ((100vw - 768px) / 512)),75px);
+  font-family: 'Memoir';
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .c-mainTitle {
+    font-size: clamp(35px, 5vw, 45px) !important;
+    text-align: center;
+    line-height: 1.2;
+  }
+}
+
+.c-subTitle {
+  font-size: clamp(35px, calc(35px + 10 * ((100vw - 768px) / 512)), 45px);
+  font-weight: bold;
+  font-family: 'Zen Maru Gothic';
+}
+
+@media screen and (max-width: 768px) {
+  .c-subTitle {
+    font-size: clamp(25px, 5vw, 35px)
+  }
+}
+
+.pc-only {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .pc-only {
+    display: none;
+  }
+}
+
+.sp-only {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .sp-only {
+    display: block;
+  }
+}

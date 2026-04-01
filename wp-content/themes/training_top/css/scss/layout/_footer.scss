@@ -1,0 +1,227 @@
+.footer {
+  position: relative;
+  padding: 60px 0 120px;
+  background-color: #CDDDBD;
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 30px 0 60px;
+  }
+}
+
+.footer::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 36vw;
+  background: url(../img/img_footer-bottom.png) no-repeat center / cover;
+  pointer-events: none;
+  content: "";
+}
+
+.footerInner {
+  margin: 0 auto;
+  max-width: 1040px;
+}
+
+@media screen and (max-width: 1040px) {
+  .footerInner {
+    padding-inline: 15px;
+  }
+}
+
+.footerBox {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .footerBox {
+    flex-direction: column;
+  }
+}
+
+.footerBox__logo {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 229px;
+}
+
+@media screen and (max-width: 768px) {
+  .footerBox__logo {
+    margin: 0 auto;
+    max-width: none;
+    width: clamp(120px, 28vw, 229px);
+  }
+}
+
+.footerBox__logo__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.footerBox__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  padding-top: 25px;
+  max-width: 596px;
+}
+
+@media screen and (max-width: 768px) {
+  .footerBox__nav {
+    margin: 0 auto;
+  }
+}
+
+.footerBox__navList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px clamp(35px, calc(6.25vw - 5px), 75px);
+}
+
+@media screen and (max-width: 768px) {
+  .footerBox__navList {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px clamp(10px, 8vw, 75px);
+  }
+}
+
+.footerBox__navList__item {
+  width: fit-content;
+}
+
+.footerBox__navList__link:hover {
+  opacity: 0.7;
+}
+
+.footerBox__navList__text {
+  position: relative;
+  padding-left: 21px;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Zen Maru Gothic";
+  line-height: 1.5;
+  letter-spacing: 0px;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 768px) {
+  .footerBox__navList__text {
+    white-space: unset;
+  }
+}
+
+.footerBox__navList__text::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 5px;
+  background: url(../img/ico_arrow-green.svg) no-repeat center / contain;
+  content: "";
+}
+
+.footerBox__blogBox {
+  display: flex;
+  gap: 34px;
+}
+
+@media screen and (max-width: 768px) {
+  .footerBox__blogBox {
+    gap: clamp(30px, calc(24.17vw - 60.6px), 125px);
+  }
+}
+
+.footerBox__blogList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px 50px;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .footerBox__blogList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.footerBox__blogList__link:hover {
+  opacity: 0.7;
+}
+
+.footerBox__blogList__text {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Zen Maru Gothic";
+  line-height: 1.5;
+  letter-spacing: 0px;
+  white-space: nowrap;
+}
+
+.footerBox__snsList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.footerBox__snsList__item {
+  width: 31px;
+  height: 30px;
+}
+
+.footerBox__snsList__link:hover {
+  opacity: 0.7;
+}
+
+.footerBox__textBox {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: -1px;
+  padding-left: 2px;
+}
+
+.footerBox__textBox__text {
+  font-size: 15px;
+  font-weight: 400;
+  font-family: "Zen Maru Gothic";
+  line-height: 1.5;
+  letter-spacing: 0px;
+}
+
+.footerBox__textBox__link {
+  text-decoration: underline;
+}
+
+.footerBox__textBox__link:hover {
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+.footerBox__textBox__text.map {
+  position: relative;
+  padding-left: 31px;
+  letter-spacing: -1px;
+  font-family: "Lexend Zetta";
+}
+
+.footerBox__textBox__text.map::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 11px;
+  height: 16px;
+  background: url(../img/ico_map.svg) no-repeat center / contain;
+  content: "";
+}
