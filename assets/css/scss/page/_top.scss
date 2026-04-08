@@ -800,7 +800,8 @@
   top: 0;
   right: 3px;
   z-index: 0;
-  width: 498px;
+  // width: 498px;
+  width: clamp(400px, calc(400px + (498 - 400) * ((100vw - 768px)/512)), 498px);
   aspect-ratio: 498 / 359;
 }
 
