@@ -29,31 +29,56 @@ const initApp = () => {
 
     // --- ★修正ポイント: この箱の中に正しい処理を入れる ---
     const setupClones = () => {
-      items.forEach((item, index) => {
-        // オリジナルにクラスを付与 (2, 5, 8...)
-        if (index % 3 === 1) {
-          item.classList.add('is-step');
-        }
+    const visibleCount = getVisibleCount();
 
-        // クラスが付いた状態でコピーを作成
-        const firstClone = item.cloneNode(true);
-        const lastClone = item.cloneNode(true);
+    const itemsArray = Array.from(items);
 
-        list.appendChild(firstClone); // 後ろに追加
-        list.insertBefore(lastClone, list.firstChild); // 前に追加
-      });
-      currentIndex = originalCount; 
-    };
+    // 前に追加（最後のn個）
+    itemsArray.slice(-visibleCount).forEach(item => {
+      const clone = item.cloneNode(true);
+      list.insertBefore(clone, list.firstChild);
+    });
+
+    // 後ろに追加（最初のn個）
+    itemsArray.slice(0, visibleCount).forEach(item => {
+      const clone = item.cloneNode(true);
+      list.appendChild(clone);
+    });
+
+    originalCount = itemsArray.length;
+
+    currentIndex = visibleCount;
+  };
 
     const updateSlider = (withTransition = true) => {
-      const style = window.getComputedStyle(list);
-      const gap = parseFloat(style.gap) || 0;
-      const itemWidth = list.children[0].offsetWidth;
+    const viewport = document.querySelector('.blogSlider__viewport');
+    const style = window.getComputedStyle(list);
+    const gap = parseFloat(style.gap) || 0;
 
-      list.style.transition = withTransition ? 'transform 0.4s ease' : 'none';
-      const moveDistance = (itemWidth + gap) * currentIndex;
-      list.style.transform = `translateX(-${moveDistance}px)`;
-    };
+    const visibleCount = getVisibleCount();
+    const containerWidth = viewport.offsetWidth;
+
+    const itemWidth = (containerWidth - gap * (visibleCount - 1)) / visibleCount;
+
+    list.style.transition = withTransition ? 'transform 0.4s ease' : 'none';
+
+    // ★ここ重要（中央基準にする）
+    const centerOffset = (containerWidth - itemWidth) / 2;
+
+    const moveDistance = (itemWidth + gap) * currentIndex - centerOffset;
+
+    list.style.transform = `translateX(-${moveDistance}px)`;
+
+    document.querySelectorAll('.blogList__item').forEach(item => {
+    item.classList.remove('is-center');
+  });
+
+  // 中央の要素にクラス付与
+  const allItems = document.querySelectorAll('.blogList__item');
+  if (allItems[currentIndex]) {
+    allItems[currentIndex].classList.add('is-center');
+  }
+  };
 
     list.addEventListener('transitionend', () => {
       isTransitioning = false;
@@ -69,14 +94,20 @@ const initApp = () => {
     nextBtn.addEventListener('click', () => {
       if (isTransitioning) return;
       isTransitioning = true;
-      currentIndex += getVisibleCount();
+      currentIndex += 1;
       updateSlider(true);
     });
 
     prevBtn.addEventListener('click', () => {
+      console.log('prev clicked', isTransitioning);
       if (isTransitioning) return;
       isTransitioning = true;
-      currentIndex -= getVisibleCount();
+      currentIndex -= 1;
+
+      if (currentIndex < 0) {
+        currentIndex = originalCount;
+        updateSlider(false);
+      }
       updateSlider(true);
     });
 

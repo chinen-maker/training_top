@@ -2878,21 +2878,12 @@ textarea {
     flex: 0 0 100%;
   }
 }
-.blogList__item.is-step {
+.blogList__item.is-center {
   margin-top: 60px;
 }
 
 @media screen and (max-width: 768px) {
-  .blogList__item.is-step {
-    margin-top: 0;
-  }
-}
-.blogList__item:nth-child(5) {
-  margin-top: 60px;
-}
-
-@media screen and (max-width: 768px) {
-  .blogList__item:nth-child(5) {
+  .blogList__item.is-center {
     margin-top: 0;
   }
 }
@@ -2910,6 +2901,7 @@ textarea {
   position: absolute;
   top: 0px;
   left: 0px;
+  z-index: -1;
   width: 100%;
   transform: rotate(-8deg);
   aspect-ratio: 285/335;

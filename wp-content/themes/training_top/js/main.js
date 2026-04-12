@@ -24,64 +24,103 @@ const initApp = () => {
     let currentIndex = 0;
     let isTransitioning = false;
     const originalCount = items.length;
-
+    const originals = Array.from(items);
     const getVisibleCount = () => window.innerWidth <= 768 ? 1 : 3;
+    const visibleCount = getVisibleCount();
+    const stepCount = 1;
 
-    // --- ★修正ポイント: この箱の中に正しい処理を入れる ---
+    const fillItems = () => {
+      let fillIndex = 0;
+      while (list.children.length <= visibleCount) {
+        list.appendChild(originals[fillIndex % originalCount].cloneNode(true));
+        fillIndex += 1;
+      }
+    };
+
     const setupClones = () => {
-      items.forEach((item, index) => {
-        // オリジナルにクラスを付与 (2, 5, 8...)
-        if (index % 3 === 1) {
-          item.classList.add('is-step');
-        }
-
-        // クラスが付いた状態でコピーを作成
-        const firstClone = item.cloneNode(true);
-        const lastClone = item.cloneNode(true);
-
-        list.appendChild(firstClone); // 後ろに追加
-        list.insertBefore(lastClone, list.firstChild); // 前に追加
+      const baseItems = Array.from(list.children);
+      const slideCount = baseItems.length;
+      baseItems.forEach((item) => {
+        list.appendChild(item.cloneNode(true));
+        list.insertBefore(item.cloneNode(true), list.firstChild);
       });
-      currentIndex = originalCount; 
+      return slideCount;
+    };
+
+    const updateStepClass = (slideCount) => {
+      list.querySelectorAll('.is-step').forEach(item => item.classList.remove('is-step'));
+      const centerIndex = currentIndex + Math.floor(visibleCount / 2);
+      const centerItem = list.children[centerIndex];
+      if (centerItem) {
+        centerItem.classList.add('is-step');
+      }
     };
 
     const updateSlider = (withTransition = true) => {
       const style = window.getComputedStyle(list);
       const gap = parseFloat(style.gap) || 0;
       const itemWidth = list.children[0].offsetWidth;
+      const moveDistance = (itemWidth + gap) * currentIndex;
 
       list.style.transition = withTransition ? 'transform 0.4s ease' : 'none';
-      const moveDistance = (itemWidth + gap) * currentIndex;
       list.style.transform = `translateX(-${moveDistance}px)`;
+      updateStepClass();
+
+      if (!withTransition) {
+        requestAnimationFrame(() => {
+          list.style.transition = '';
+        });
+      }
     };
+
+    let slideCount = originalCount;
+    let infiniteMode = false;
+
+    const getMaxIndex = () => infiniteMode ? slideCount * 2 : Math.max(0, slideCount - visibleCount);
 
     list.addEventListener('transitionend', () => {
       isTransitioning = false;
-      if (currentIndex >= originalCount * 2) {
-        currentIndex = originalCount;
+      if (!infiniteMode) return;
+
+      if (currentIndex >= slideCount * 2) {
+        currentIndex = slideCount;
         updateSlider(false);
       } else if (currentIndex <= 0) {
-        currentIndex = originalCount;
+        currentIndex = slideCount;
         updateSlider(false);
       }
     });
 
     nextBtn.addEventListener('click', () => {
       if (isTransitioning) return;
+      const maxIndex = getMaxIndex();
+      if (currentIndex >= maxIndex) return;
       isTransitioning = true;
-      currentIndex += getVisibleCount();
+      currentIndex = Math.min(maxIndex, currentIndex + stepCount);
       updateSlider(true);
     });
 
     prevBtn.addEventListener('click', () => {
       if (isTransitioning) return;
+      if (currentIndex <= 0) return;
       isTransitioning = true;
-      currentIndex -= getVisibleCount();
+      currentIndex = Math.max(0, currentIndex - stepCount);
       updateSlider(true);
     });
 
-    // ここで上で定義した setupClones を呼ぶ
-    setupClones();
+    if (originalCount <= visibleCount) {
+      fillItems();
+    }
+    slideCount = list.children.length;
+    infiniteMode = slideCount > visibleCount;
+    const baseSlideCount = setupClones();
+    
+    if (infiniteMode) {
+      currentIndex = baseSlideCount;
+    } else {
+      currentIndex = 0;
+    }
+    
     updateSlider(false);
 
     window.addEventListener('resize', () => {

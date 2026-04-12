@@ -314,60 +314,42 @@
         </button>
         <div class="blogSlider__viewport">
           <ul class="blogList">
-            <li class="blogList__item">
-              <div class="blogList__imgBox">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/img_blog01.png" alt="ブログ1" class="blogList__imgBox__img">
-              </div>
-              <div class="blogList__textBox">
-                <p class="blogList__textBox__date">2026年 / 01月09日</p>
-                <p class="blogList__textBox__title">1月　つぶやき</p>
-              </div>
-            </li>
-            <li class="blogList__item">
-              <div class="blogList__imgBox">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/img_blog02.png" alt="ブログ2" class="blogList__imgBox__img">
-              </div>
-              <div class="blogList__textBox">
-                <p class="blogList__textBox__date">2026年 / 01月09日</p>
-                <p class="blogList__textBox__title">1月　つぶやき</p>
-              </div>
-            </li>
-            <li class="blogList__item">
-              <div class="blogList__imgBox">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/img_blog03.png" alt="ブログ3" class="blogList__imgBox__img">
-              </div>
-              <div class="blogList__textBox">
-                <p class="blogList__textBox__date">2026年 / 01月09日</p>
-                <p class="blogList__textBox__title">1月　つぶやき</p>
-              </div>
-            </li>
-            <li class="blogList__item">
-              <div class="blogList__imgBox">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/img_blog01.png" alt="ブログ1" class="blogList__imgBox__img">
-              </div>
-              <div class="blogList__textBox">
-                <p class="blogList__textBox__date">2026年 / 01月09日</p>
-                <p class="blogList__textBox__title">1月　つぶやき</p>
-              </div>
-            </li>
-            <li class="blogList__item">
-              <div class="blogList__imgBox">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/img_blog02.png" alt="ブログ2" class="blogList__imgBox__img">
-              </div>
-              <div class="blogList__textBox">
-                <p class="blogList__textBox__date">2026年 / 01月09日</p>
-                <p class="blogList__textBox__title">1月　つぶやき</p>
-              </div>
-            </li>
-            <li class="blogList__item">
-              <div class="blogList__imgBox">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/img_blog03.png" alt="ブログ3" class="blogList__imgBox__img">
-              </div>
-              <div class="blogList__textBox">
-                <p class="blogList__textBox__date">2026年 / 01月09日</p>
-                <p class="blogList__textBox__title">1月　つぶやき</p>
-              </div>
-            </li>
+            <?php
+            $args = array(
+              'post_type' => 'post',
+              'posts_per_page' => 6,
+            );
+
+            $query = new WP_Query($args);
+
+            if ($query->have_posts()) :
+              while ($query->have_posts()) : $query->the_post();
+            ?>
+                <li class="blogList__item">
+                  <a href="<?php the_permalink(); ?>">
+                    <div class="blogList__imgBox">
+                      <?php if (has_post_thumbnail()) : ?>
+                        <?php the_post_thumbnail('medium', ['class' => 'blogList__imgBox__img']); ?>
+                      <?php else : ?>
+                        <img src="/training_top/wp-content/themes/training_top/img/img_blog01.png">
+                      <?php endif; ?>
+                    </div>
+                    <div class="blogList__textBox">
+                      <p class="blogList__textBox__date">
+                        <?php the_time('Y年 / m月d日'); ?>
+                      </p>
+                      <p class="blogList__textBox__title">
+                        <?php the_title(); ?>
+                      </p>
+                    </div>
+                  </a>
+                </li>
+            <?php
+              endwhile;
+            endif;
+
+            wp_reset_postdata();
+            ?>
           </ul>
         </div>
         <button class="blogSlider__next">
@@ -574,6 +556,6 @@
 <script src="assets/js/jquery-3.6.1.min.js"></script>
 <script src="assets/js/slick.min.js"></script>
 <script src="assets/js/desvg.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/main.js?v=2"></script>
 
 <?php get_footer(); ?>
