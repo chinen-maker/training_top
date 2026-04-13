@@ -318,6 +318,8 @@
             $args = array(
               'post_type' => 'post',
               'posts_per_page' => 6,
+              'orderby' => 'date', // ← 時系列固定
+              'order' => 'DESC',
             );
 
             $query = new WP_Query($args);
@@ -327,21 +329,37 @@
             ?>
                 <li class="blogList__item">
                   <a href="<?php the_permalink(); ?>">
+
                     <div class="blogList__imgBox">
                       <?php if (has_post_thumbnail()) : ?>
                         <?php the_post_thumbnail('medium', ['class' => 'blogList__imgBox__img']); ?>
                       <?php else : ?>
-                        <img src="/training_top/wp-content/themes/training_top/img/img_blog01.png">
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/img_blog01.png">
                       <?php endif; ?>
                     </div>
+
                     <div class="blogList__textBox">
+
+                      <p class="blogList__category">
+                        <?php the_category(', '); ?>
+                      </p>
+
                       <p class="blogList__textBox__date">
                         <?php the_time('Y年 / m月d日'); ?>
                       </p>
+
                       <p class="blogList__textBox__title">
                         <?php the_title(); ?>
                       </p>
+
+                      <?php if (has_tag()) : ?>
+                        <p class="blogList__tags">
+                          <?php the_tags('', ', '); ?>
+                        </p>
+                      <?php endif; ?>
+
                     </div>
+
                   </a>
                 </li>
             <?php
