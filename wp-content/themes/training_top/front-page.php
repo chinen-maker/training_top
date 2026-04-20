@@ -318,7 +318,7 @@
             $args = array(
               'post_type' => 'post',
               'posts_per_page' => 6,
-              'orderby' => 'date', // ← 時系列固定
+              'orderby' => 'date',
               'order' => 'DESC',
             );
 
