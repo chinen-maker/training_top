@@ -4,11 +4,22 @@ const initApp = () => {
   // ===============================
   const hamburger = document.querySelector(".header__hamburger");
   const menu = document.querySelector(".header__listBox");
+
   if (hamburger && menu) {
-    hamburger.addEventListener("click", () => {
+    hamburger.addEventListener("click", (event) => {
+      event.preventDefault();
       hamburger.classList.toggle("is-active");
       menu.classList.toggle("is-active");
       document.body.classList.toggle("is-menu-open");
+    });
+
+    // メニュー内のリンクをクリックしたらメニューを閉じる
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove("is-active");
+        menu.classList.remove("is-active");
+        document.body.classList.remove("is-menu-open");
+      });
     });
   }
 
