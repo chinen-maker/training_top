@@ -36,6 +36,7 @@
 
 @media screen and (max-width: 768px) {
   .kvBox__link {
+    top: 0;
     width: clamp(60px, calc(21.37vw - 20.1px), 144px);
   }
 }
@@ -43,6 +44,12 @@
 .kvBox__link.forest {
   top: 3vw;
   left: 2.4vw;
+}
+
+@media screen and (max-width: 768px) {
+  .kvBox__link.forest {
+    top: 6vw;
+  }
 }
 
 .kvBox__link:hover {
@@ -269,7 +276,7 @@
   position: absolute;
   top: -9.6vw;
   left: 50%;
-  z-index: 5;
+  z-index: 11;
   transform: translateX(-50%);
   width: 100%;
   height: 9.7vw;
@@ -1254,7 +1261,7 @@
   .recruitBox__flexBox__inner {
     flex-direction: column;
     gap: 20px;
-    padding: 60px 10px 10px;
+    padding: 60px 15px 10px;
   }
 }
 
@@ -1443,6 +1450,7 @@
   position: absolute;
   top: 42%;
   left: -4.5vw;
+  z-index: 10;
   transform: translateY(-50%);
   width: 14px;
   height: 14px;
@@ -1450,7 +1458,7 @@
 
 @media screen and (max-width: 768px) {
   .blogSlider__prev {
-    top: 50%;
+    top: 38%;
     left: clamp(-20.625px,calc(-20.625px + (119.04 + 20.625) * ((100vw - 375px) / 393)),119.04px);
   }
 }
@@ -1467,7 +1475,7 @@
 
 @media screen and (max-width: 768px) {
   .blogSlider__next {
-    top: 50%;
+    top: 38%;
     right: clamp(-20.625px,calc(-20.625px + (119.04 + 20.625) * ((100vw - 375px) / 393)),119.04px);
   }
 }
@@ -2066,6 +2074,10 @@
   border: 2px dotted #fff;
 }
 
+.contactInfoBox .c-btn:hover {
+  border-style: solid;
+}
+
 @media screen and (max-width: 768px) {
   .contactInfoBox .c-btn {
     padding-block: 11.5px 10.5px;
@@ -2074,15 +2086,13 @@
     width: 100%;
   }
 
-.contactInfoBox .c-btn:hover {
-  border-style: solid;
-}
-
   .kvBox {
+    padding-top: 30px;
     padding-inline: 15px;
   }
 
   .kvBox__text {
+    top: 2vw;
     max-width: clamp(138px, calc(47.6vw - 40.5px), 325px);
   }
 

@@ -6,6 +6,12 @@
   background-color: #CFDFC0;
 }
 
+@media screen and (max-width: 768px) {
+  .header {
+    z-index: 21;
+  }
+}
+
 .header__inner {
   display: flex;
   justify-content: flex-start;
@@ -88,6 +94,7 @@
   .header__hamburger {
     display: block;
     position: fixed;
+    z-index: 999;
     top: 21px;
     right: clamp(20px, 4.7vw, 60px);
     width: 30px;
