@@ -19,3 +19,18 @@ function my_theme_setup() {
   add_theme_support('post-thumbnails');
 }
 add_action('after_setup_theme', 'my_theme_setup');
+
+function create_news_post_type() {
+
+  register_post_type('news',
+    array(
+      'label' => 'お知らせ',
+      'public' => true,
+      'has_archive' => true,
+      'show_in_rest' => true,
+      'supports' => array('title','editor','thumbnail'),
+    )
+  );
+
+}
+add_action('init', 'create_news_post_type');

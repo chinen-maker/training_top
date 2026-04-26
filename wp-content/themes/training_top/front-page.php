@@ -1,91 +1,5 @@
 <?php get_header(); ?>
 
-<header class="header">
-  <div class="header__inner">
-    <h1 class="header__logo">
-      <a href="/" class="header__logo__link">
-        <div class="header__logo__imgBox">
-          <img src="<?php echo get_template_directory_uri(); ?>/img/header_logo.png" class="header__logo__img" alt="吉瀬こどもの森">
-        </div>
-      </a>
-    </h1>
-    <button type="button" class="header__hamburger">
-      <span class="header__hamburger__line"></span>
-      <span class="header__hamburger__line"></span>
-      <span class="header__hamburger__line"></span>
-    </button>
-    <div class="header__listBox">
-      <ul class="header__list">
-        <li class="header__list__item">
-          <a href="/" class="header__list__link">
-            <div class="header__list__imgBox">
-              <picture>
-                <source srcset="assets/img/img_headerArrow-sp.png" media="(max-width:768px)">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/header_story.png" alt="ストーリー・オブ・ネイチャー" class="header__list__img">
-              </picture>
-            </div>
-            <p class="header__list__title">ストーリー・オブ・ネイチャー</p>
-          </a>
-        </li>
-        <li class="header__list__item">
-          <a href="/" class="header__list__link">
-            <div class="header__list__imgBox">
-              <picture>
-                <source srcset="assets/img/img_headerArrow-sp.png" media="(max-width:768px)">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/header_introduction.png" alt="園について" class="header__list__img">
-              </picture>
-            </div>
-            <p class="header__list__title">園について</p>
-          </a>
-        </li>
-        <li class="header__list__item">
-          <a href="/" class="header__list__link">
-            <div class="header__list__imgBox">
-              <picture>
-                <source srcset="assets/img/img_headerArrow-sp.png" media="(max-width:768px)">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/header_life.png" alt="園の生活" class="header__list__img">
-              </picture>
-            </div>
-            <p class="header__list__title">園の生活</p>
-          </a>
-        </li>
-        <li class="header__list__item">
-          <a href="/" class="header__list__link">
-            <div class="header__list__imgBox">
-              <picture>
-                <source srcset="assets/img/img_headerArrow-sp.png" media="(max-width:768px)">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/header_guidance.png" alt="入園案内" class="header__list__img">
-              </picture>
-            </div>
-            <p class="header__list__title">入園案内</p>
-          </a>
-        </li>
-        <li class="header__list__item">
-          <a href="/" class="header__list__link">
-            <div class="header__list__imgBox">
-              <picture>
-                <source srcset="assets/img/img_headerArrow-sp.png" media="(max-width:768px)">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/header_blog.png" alt="ブログ" class="header__list__img">
-              </picture>
-            </div>
-            <p class="header__list__title">ブログ</p>
-          </a>
-        </li>
-        <li class="header__list__item">
-          <a href="/" class="header__list__link">
-            <div class="header__list__imgBox">
-              <picture>
-                <source srcset="assets/img/img_headerArrow-sp.png" media="(max-width:768px)">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/header_recruit.png" alt="職員採用" class="header__list__img">
-              </picture>
-            </div>
-            <p class="header__list__title">職員採用</p>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</header>
 <div class="kvArea c-section">
   <div class="c-container">
     <div class="kvBox">
@@ -306,6 +220,43 @@
 <section class="blogArea c-section">
   <div class="c-container">
     <div class="blogBox">
+      <h2 class="c-mainTitle">News</h2>
+  <h3 class="c-subTitle">お知らせ</h3>
+
+  <ul class="newsList">
+<?php
+$args = array(
+  'post_type' => 'news',
+  'posts_per_page' => 3,
+  'orderby' => 'date',
+  'order' => 'DESC',
+);
+
+$query = new WP_Query($args);
+
+if ($query->have_posts()) :
+  while ($query->have_posts()) : $query->the_post();
+?>
+    <li class="newsList__item">
+      <a href="<?php the_permalink(); ?>">
+
+        <span class="newsList__date">
+          <?php the_time('Y.m.d'); ?>
+        </span>
+
+        <span class="newsList__title">
+          <?php the_title(); ?>
+        </span>
+
+      </a>
+    </li>
+<?php
+  endwhile;
+endif;
+
+wp_reset_postdata();
+?>
+</ul>
       <h2 class="c-mainTitle">Blog</h2>
       <h3 class="c-subTitle">ブログ</h3>
       <div class="blogSlider">
@@ -453,123 +404,6 @@
     </div>
   </div>
 </section>
-
-<footer class="footer">
-  <div class="footerInner">
-    <div class="footerBox">
-      <div class="footerBox__logo">
-        <img src="<?php echo get_template_directory_uri(); ?>/img/img_footerLogo.png" alt="footerロゴ" class="footerBox__logo__img">
-      </div>
-      <div class="footerBox__nav">
-        <ul class="footerBox__navList">
-          <li class="footerBox__navList__item">
-            <a href="" class="footerBox__navList__link">
-              <p class="footerBox__navList__text">トップページ</p>
-            </a>
-          </li>
-          <li class="footerBox__navList__item">
-            <a href="" class="footerBox__navList__link">
-              <p class="footerBox__navList__text">園の生活</p>
-            </a>
-          </li>
-          <li class="footerBox__navList__item">
-            <a href="" class="footerBox__navList__link">
-              <p class="footerBox__navList__text">交通アクセス</p>
-            </a>
-          </li>
-          <li class="footerBox__navList__item">
-            <a href="" class="footerBox__navList__link">
-              <p class="footerBox__navList__text">ストーリー・オブ・ネイチャー</p>
-            </a>
-          </li>
-          <li class="footerBox__navList__item">
-            <a href="" class="footerBox__navList__link">
-              <p class="footerBox__navList__text">入園案内</p>
-            </a>
-          </li>
-          <li class="footerBox__navList__item">
-            <a href="" class="footerBox__navList__link">
-              <p class="footerBox__navList__text">お問い合わせ</p>
-            </a>
-          </li>
-          <li class="footerBox__navList__item">
-            <a href="" class="footerBox__navList__link">
-              <p class="footerBox__navList__text">園について</p>
-            </a>
-          </li>
-          <li class="footerBox__navList__item">
-            <a href="" class="footerBox__navList__link">
-              <p class="footerBox__navList__text">職員採用</p>
-            </a>
-          </li>
-        </ul>
-        <div class="footerBox__blogBox">
-          <div class="footerBox__blogBox__left">
-            <p class="footerBox__navList__text">ブログ</p>
-            <ul class="footerBox__blogList">
-              <li class="footerBox__blogList__item">
-                <a href="/" class="footerBox__blogList__link">
-                  <p class="footerBox__blogList__text">つぶやき</p>
-                </a>
-              </li>
-              <li class="footerBox__blogList__item">
-                <a href="/" class="footerBox__blogList__link">
-                  <p class="footerBox__blogList__text">お知らせ</p>
-                </a>
-              </li>
-              <li class="footerBox__blogList__item">
-                <a href="/" class="footerBox__blogList__link">
-                  <p class="footerBox__blogList__text">採用情報</p>
-                </a>
-              </li>
-              <li class="footerBox__blogList__item">
-                <a href="/" class="footerBox__blogList__link">
-                  <p class="footerBox__blogList__text">行事関連</p>
-                </a>
-              </li>
-              <li class="footerBox__blogList__item">
-                <a href="/" class="footerBox__blogList__link">
-                  <p class="footerBox__blogList__text">MOVIE</p>
-                </a>
-              </li>
-              <li class="footerBox__blogList__item">
-                <a href="/" class="footerBox__blogList__link">
-                  <p class="footerBox__blogList__text">情報公開</p>
-                </a>
-              </li>
-              <li class="footerBox__blogList__item">
-                <a href="/" class="footerBox__blogList__link">
-                  <p class="footerBox__blogList__text">苦情解決</p>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="footerBox__blogBox__right">
-            <ul class="footerBox__snsList">
-              <li class="footerBox__snsList__item">
-                <a href="#" class="footerBox__snsList__link">
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/ico_insta.png" alt="Instagramアイコン" class="footerBox__snsList__img">
-                </a>
-              </li>
-              <li class="footerBox__snsList__item">
-                <a href="#" class="footerBox__snsList__link">
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/ico_youtube.png" alt="YouTubeアイコン" class="footerBox__snsList__img">
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="footerBox__textBox">
-          <p class="footerBox__textBox__text">学校法人清風学園　嘉瀬こどもの森</p>
-          <p class="footerBox__textBox__text">〒840-0863 佐賀市嘉瀬町大字十五57-1</p>
-          <a href="" class="footerBox__textBox__link">
-            <p class="footerBox__textBox__text map">GoogleMap</p>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
 
 <script src="assets/js/jquery-3.6.1.min.js"></script>
 <script src="assets/js/slick.min.js"></script>

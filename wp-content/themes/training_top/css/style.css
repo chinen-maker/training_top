@@ -311,8 +311,10 @@ button,
 input,
 optgroup,
 select,
-textarea { /* 1 */
-  appearance: none;
+textarea {
+  -webkit-appearance: none; /* 1 */
+  -moz-appearance: none;
+       appearance: none;
   vertical-align: middle;
   color: inherit;
   font: inherit;
@@ -715,6 +717,7 @@ textarea {
   background-color: #fff;
   margin: 55px auto 0;
   min-width: 336px;
+  width: -moz-fit-content;
   width: fit-content;
 }
 
@@ -748,6 +751,7 @@ textarea {
   display: block;
   box-sizing: border-box;
   -webkit-user-select: none;
+  -moz-user-select: none;
   user-select: none;
   -webkit-touch-callout: none;
   -khtml-user-select: none;
@@ -1016,7 +1020,8 @@ textarea {
 .header__logo__img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .header__listBox {
@@ -1045,7 +1050,8 @@ textarea {
 .header__list__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .header__list__title {
@@ -1266,7 +1272,8 @@ textarea {
 .footerBox__logo__img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .footerBox__nav {
@@ -1296,6 +1303,7 @@ textarea {
   }
 }
 .footerBox__navList__item {
+  width: -moz-fit-content;
   width: fit-content;
 }
 
@@ -1487,7 +1495,8 @@ textarea {
   z-index: 1;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   pointer-events: none;
 }
 
@@ -1496,7 +1505,8 @@ textarea {
   z-index: 1;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .kvBox__text {
@@ -1513,6 +1523,7 @@ textarea {
   display: inline-block;
   padding-top: 2px;
   padding-left: 5px;
+  width: -moz-fit-content;
   width: fit-content;
   line-height: 1.5;
 }
@@ -1813,7 +1824,8 @@ textarea {
 .titleIconBox__img {
   width: 40px;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 @media screen and (max-width: 768px) {
@@ -1992,7 +2004,8 @@ textarea {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .scheduleArea {
@@ -2225,7 +2238,8 @@ textarea {
 .scheduleFlexBox__imgBox__img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 @media screen and (max-width: 1200px) {
@@ -2328,7 +2342,8 @@ textarea {
 .scheduleList__imgBox__img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .scheduleList__textBox {
@@ -2696,7 +2711,8 @@ textarea {
 .recruitBox__flexBox__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .recruitBottomImgBox {
@@ -2715,7 +2731,8 @@ textarea {
 .recruitBottomImgBox__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .blogArea {
@@ -2848,6 +2865,56 @@ textarea {
     margin: 0 -30px;
   }
 }
+.newsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 22.5px;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 22.5px auto 0;
+}
+
+.newsList__item a {
+  display: flex;
+  gap: 16px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.newsList__item a:hover {
+  opacity: 0.7;
+}
+
+.newsList__date {
+  min-width: 90px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.newsList__title {
+  flex: 1;
+}
+
+.newsDetail {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.newsDetail__title {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.newsDetail__date {
+  color: #888;
+  margin-bottom: 24px;
+}
+
+.newsDetail__content {
+  line-height: 1.8;
+}
+
 .blogList {
   position: relative;
   display: flex;
@@ -2926,7 +2993,8 @@ textarea {
   z-index: 1;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .blogList__textBox {
@@ -3114,7 +3182,8 @@ textarea {
 .specialContents__topBox__imgBox-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .specialContents__bottomBox {
@@ -3273,6 +3342,7 @@ textarea {
   position: relative;
   margin-left: 52px;
   padding-left: 43px;
+  width: -moz-fit-content;
   width: fit-content;
   font-size: 21px;
   font-weight: 500;
