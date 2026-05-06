@@ -221,42 +221,62 @@
   <div class="c-container">
     <div class="blogBox">
       <h2 class="c-mainTitle">News</h2>
-  <h3 class="c-subTitle">お知らせ</h3>
+      <h3 class="c-subTitle">お知らせ</h3>
 
-  <ul class="newsList">
-<?php
-$args = array(
-  'post_type' => 'news',
-  'posts_per_page' => 3,
-  'orderby' => 'date',
-  'order' => 'DESC',
-);
+      <ul class="newsList">
+      <?php
+      $args = array(
+        'post_type' => 'news',
+        'posts_per_page' => 3,
+        'orderby' => 'date',
+        'order' => 'DESC',
+      );
 
-$query = new WP_Query($args);
+      $query = new WP_Query($args);
 
-if ($query->have_posts()) :
-  while ($query->have_posts()) : $query->the_post();
-?>
-    <li class="newsList__item">
-      <a href="<?php the_permalink(); ?>">
+      if ($query->have_posts()) :
+        while ($query->have_posts()) : $query->the_post();
+          // ACF取得
+          $link = get_field('link_url');
+          $sub_text = get_field('sub_text');
+          $is_important = get_field('is_important');
 
-        <span class="newsList__date">
-          <?php the_time('Y.m.d'); ?>
-        </span>
+          // リンク分岐
+          $url = $link ? esc_url($link) : get_permalink();
+      ?>
+      
+          <li class="newsList__item">
+            <a href="<?php echo $url; ?>">
 
-        <span class="newsList__title">
-          <?php the_title(); ?>
-        </span>
+              <span class="newsList__date">
+                <?php the_time('Y.m.d'); ?>
+              </span>
 
-      </a>
-    </li>
-<?php
-  endwhile;
-endif;
+              <span class="newsList__title">
 
-wp_reset_postdata();
-?>
-</ul>
+                <?php if ($is_important) : ?>
+                  <span class="newsList__important">重要</span>
+                <?php endif; ?>
+
+                <?php the_title(); ?>
+              </span>
+
+            </a>
+
+            <?php if ($sub_text) : ?>
+              <p class="newsList__sub">
+                <?php echo esc_html($sub_text); ?>
+              </p>
+            <?php endif; ?>
+
+          </li>
+      <?php
+        endwhile;
+      endif;
+
+      wp_reset_postdata();
+      ?>
+      </ul>
       <h2 class="c-mainTitle">Blog</h2>
       <h3 class="c-subTitle">ブログ</h3>
       <div class="blogSlider">
